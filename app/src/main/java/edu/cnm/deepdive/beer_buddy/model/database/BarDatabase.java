@@ -14,7 +14,7 @@ import edu.cnm.deepdive.beer_buddy.model.dao.BarBeerJoinDao;
 import edu.cnm.deepdive.beer_buddy.model.dao.BarDao;
 import edu.cnm.deepdive.beer_buddy.model.dao.BeerDao;
 
-@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1)
+@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1, exportSchema = false)
 public abstract class BarDatabase extends RoomDatabase {
 
   public abstract BarDao getBarListingDao();
