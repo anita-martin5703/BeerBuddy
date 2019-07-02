@@ -5,8 +5,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import edu.cnm.deepdive.beer_buddy.model.database.BarDatabase;
-import edu.cnm.deepdive.beer_buddy.model.entities.BarBeerJoin;
-import edu.cnm.deepdive.beer_buddy.model.entities.Beer;
+import edu.cnm.deepdive.beer_buddy.model.entity.BarBeerJoin;
+import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import java.util.List;
 
 public class BeerViewModel extends AndroidViewModel {

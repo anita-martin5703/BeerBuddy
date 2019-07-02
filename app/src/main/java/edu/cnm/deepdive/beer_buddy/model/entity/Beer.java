@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.beer_buddy.model.entities;
+package edu.cnm.deepdive.beer_buddy.model.entity;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;

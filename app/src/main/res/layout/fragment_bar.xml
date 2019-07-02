@@ -5,10 +5,20 @@
              android:layout_height="match_parent"
              tools:context=".model.fragments.BarFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            android:text="@string/bar_fragment_title"
+            android:id="@+id/BarFragmentTitle"
+            tools:text="Map!"/>
+
+    <com.google.android.gms.maps.MapView
+            android:layout_width="match_parent"
+            android:layout_height="660dp"
+            android:id="@+id/mapView"/>
+
+    <SearchView
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"/>
 
 </FrameLayout>
