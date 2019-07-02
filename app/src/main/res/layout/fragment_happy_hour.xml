@@ -21,8 +21,8 @@
     <EditText
             android:id="@+id/bar_name_edit_text"
             android:hint="Bar Name"
-            android:layout_width="216dp"
-            android:layout_height="52dp"
+            android:layout_width="214dp"
+            android:layout_height="57dp"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,8 +35,8 @@
     <EditText
             android:id="@+id/bar_hours_for_happy_hour"
             android:hint="Input Time"
-            android:layout_width="213dp"
-            android:layout_height="56dp"
+            android:layout_width="212dp"
+            android:layout_height="59dp"
             android:inputType="time"
             android:ems="10"
             app:layout_constraintTop_toBottomOf="@+id/bar_name_edit_text"
@@ -44,7 +44,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.494"/>
     <EditText
             android:id="@+id/address_of_bar"
