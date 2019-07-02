@@ -21,7 +21,34 @@ import java.io.Serializable;
   @ColumnInfo(name = "beer_id", index = true)
   private Long beerId;
   private String name;
+  @ColumnInfo(name = "brewery_house", index = true)
+  private String breweryHouse;
+  private String type;
+  private String style;
 
+  public String getBreweryHouse() {
+    return breweryHouse;
+  }
+
+  public void setBreweryHouse(String breweryHouse) {
+    this.breweryHouse = breweryHouse;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getStyle() {
+    return style;
+  }
+
+  public void setStyle(String style) {
+    this.style = style;
+  }
 
   public Long getId() {
     return id;

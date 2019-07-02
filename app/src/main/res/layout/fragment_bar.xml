@@ -5,13 +5,6 @@
              android:layout_height="match_parent"
              tools:context=".model.fragments.BarFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/bar_fragment_title"
-            android:id="@+id/BarFragmentTitle"
-            tools:text="Map!"/>
-
     <com.google.android.gms.maps.MapView
             android:layout_width="match_parent"
             android:layout_height="660dp"
