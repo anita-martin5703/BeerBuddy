@@ -3,6 +3,7 @@ package edu.cnm.deepdive.beer_buddy.model.fragments;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,11 +62,11 @@ public class BarFragment extends Fragment {
         }
     }
 
+    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bar, container, false);
+        return inflater.inflate(R.layout.fragment_bar, null);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -78,6 +79,7 @@ public class BarFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        //TODO fix me
 //        if (context instanceof OnFragmentInteractionListener) {
 //            mListener = (OnFragmentInteractionListener) context;
 //        } else {

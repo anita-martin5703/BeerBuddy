@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".model.fragments.BarFragment">
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".model.fragments.BarFragment"
+        android:id="@+id/bar_frame_layout"
+        android:backgroundTint="@color/mapBackground">
 
-    <com.google.android.gms.maps.MapView
-            android:layout_width="match_parent"
-            android:layout_height="660dp"
-            android:id="@+id/mapView"/>
+    <!--    TODO add back in when you figure out mapping.-->
+    <!--    <com.google.android.gms.maps.MapView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="660dp"-->
+    <!--            android:id="@+id/mapView"/>-->
 
     <SearchView
             android:layout_width="409dp"

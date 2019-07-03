@@ -5,7 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".model.fragments.BeerFragment">
+        tools:context=".model.fragments.BeerFragment"
+        android:id="@+id/bar_layout"
+        android:backgroundTint="@color/beerBackground">
 
     <ListView
             android:id="@+id/list_of_beers"
