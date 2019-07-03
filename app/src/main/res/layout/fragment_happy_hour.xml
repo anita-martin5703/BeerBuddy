@@ -15,7 +15,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/list_of_happy_hour_times"/>
@@ -23,44 +22,46 @@
     <EditText
             android:id="@+id/bar_name_edit_text"
             android:hint="Bar Name"
-            android:layout_width="214dp"
-            android:layout_height="57dp"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/list_of_happy_hour_times"
-            android:layout_marginTop="12dp"
-            app:layout_constraintHorizontal_bias="0.497"/>
+            app:layout_constraintBottom_toTopOf="@+id/bar_hours_for_happy_hour"/>
+
     <EditText
             android:id="@+id/bar_hours_for_happy_hour"
             android:hint="Input Time"
-            android:layout_width="212dp"
-            android:layout_height="59dp"
-            android:inputType="time"
-            android:ems="10"
-            app:layout_constraintTop_toBottomOf="@+id/bar_name_edit_text"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
             android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"
             android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp"
-            app:layout_constraintHorizontal_bias="0.494"/>
+            android:ems="10"
+            android:inputType="time"
+            app:layout_constraintTop_toBottomOf="@+id/bar_name_edit_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/address_of_bar"/>
+
     <EditText
             android:id="@+id/address_of_bar"
             android:hint="Enter Address"
-            android:layout_width="211dp"
-            android:layout_height="51dp"
-            android:inputType="textPostalAddress"
-            android:ems="10"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bar_hours_for_happy_hour"
-            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/button_submit_happy_hour_time"/>
     <Button
             android:id="@+id/button_submit_happy_hour_time"
@@ -68,11 +69,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/address_of_bar"
-            android:layout_marginEnd="8dp"/>
+            app:layout_constraintTop_toBottomOf="@id/address_of_bar"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

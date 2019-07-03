@@ -1,5 +1,7 @@
 # Beer Buddy!
 
+#Milestone #1
+
 ### Brief Overview
 
 This app will be appealing to anyone who loves beer! (of course 21+) It will help you locate
@@ -14,13 +16,16 @@ previous drink searches.
 
 * [User stories](docs/user-stories.md)
 
-* [Wireframes](docs/wireframes.md)
+* [First Wireframes](docs/wireframes.md)
 
-* [1st ERD](docs/erd.md)
+* [First ERD](docs/erd.md)
 
     *  ![ERD in png](docs/ERD-1.png)
     
-    *  ![ERD in pdf](docs/ERD-1.pdf)
-         
-
+    *  [Click for ERD in pdf](docs/ERD-1.pdf)
     
+    
+    
+# Milestone #2
+
+Please [click](docs/Milestone-Deliverable.md) here to see the process of my deliveriable

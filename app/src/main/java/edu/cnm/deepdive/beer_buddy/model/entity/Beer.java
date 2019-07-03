@@ -26,29 +26,6 @@ import java.io.Serializable;
   private String type;
   private String style;
 
-  public String getBreweryHouse() {
-    return breweryHouse;
-  }
-
-  public void setBreweryHouse(String breweryHouse) {
-    this.breweryHouse = breweryHouse;
-  }
-
-  public String getType() {
-    return type;
-  }
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-  public String getStyle() {
-    return style;
-  }
-
-  public void setStyle(String style) {
-    this.style = style;
-  }
 
   public Long getId() {
     return id;
@@ -73,6 +50,31 @@ import java.io.Serializable;
   public void setName(String name) {
     this.name = name;
   }
+
+  public String getBreweryHouse() {
+    return breweryHouse;
+  }
+
+  public void setBreweryHouse(String breweryHouse) {
+    this.breweryHouse = breweryHouse;
+  }
+
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
+  public String getStyle() {
+    return style;
+  }
+
+  public void setStyle(String style) {
+    this.style = style;
+  }
+
 
   @NonNull
   @Override
