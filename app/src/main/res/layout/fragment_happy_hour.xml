@@ -10,14 +10,14 @@
         android:backgroundTint="@color/happyHourBackground">
 
     <ListView
+            android:id="@+id/list_of_happy_hour_times"
             android:layout_width="match_parent"
-            android:layout_height="440dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/list_of_happy_hour_times"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
             android:id="@+id/bar_name_edit_text"
@@ -27,11 +27,10 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:ems="10"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/list_of_happy_hour_times"
+            app:layout_constraintTop_toBottomOf="@id/list_of_happy_hour_times"
             app:layout_constraintBottom_toTopOf="@+id/bar_hours_for_happy_hour"/>
 
     <EditText
@@ -42,9 +41,8 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:inputType="time"
-            app:layout_constraintTop_toBottomOf="@+id/bar_name_edit_text"
+            app:layout_constraintTop_toBottomOf="@id/bar_name_edit_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/address_of_bar"/>
@@ -57,11 +55,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
             android:inputType="textPostalAddress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bar_hours_for_happy_hour"
+            app:layout_constraintTop_toBottomOf="@id/bar_hours_for_happy_hour"
             app:layout_constraintBottom_toTopOf="@+id/button_submit_happy_hour_time"/>
     <Button
             android:id="@+id/button_submit_happy_hour_time"

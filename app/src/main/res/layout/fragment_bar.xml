@@ -14,8 +14,8 @@
     <!--            android:layout_height="660dp"-->
     <!--            android:id="@+id/mapView"/>-->
 
-    <SearchView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+<!--    <SearchView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"/>-->
 
 </FrameLayout>
