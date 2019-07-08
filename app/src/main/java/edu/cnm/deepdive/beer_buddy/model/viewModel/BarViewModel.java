@@ -51,9 +51,9 @@ public class BarViewModel extends AndroidViewModel {
     }).start();
   }
 
-  public LiveData<Bar> getBar(Long id){
-    BarDatabase db = BarDatabase.getInstance(getApplication());
-    return db.getBarListingDao().findById(id);
+  public LiveData<List<Bar>> getBar(){
+    bars = BarDatabase.getInstance(getApplication()).getBarListingDao().getAll();
+    return bars;
   }
 
   public void AddNewBeerToBar(final Long barId, final Long id){

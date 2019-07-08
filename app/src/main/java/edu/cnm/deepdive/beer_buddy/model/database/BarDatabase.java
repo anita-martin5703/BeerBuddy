@@ -28,7 +28,6 @@ public abstract class BarDatabase extends RoomDatabase {
   public static BarDatabase getInstance(Context context) {
     if (INSTANCE == null) {
       synchronized (BarDatabase.class) {
-        if (INSTANCE == null){
         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
             BarDatabase.class, "bar_room")
             .fallbackToDestructiveMigration()
@@ -41,7 +40,7 @@ public abstract class BarDatabase extends RoomDatabase {
             }).build();
       }
     }
-  }
+
     return INSTANCE;
   }
 
