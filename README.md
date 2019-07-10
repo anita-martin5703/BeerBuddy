@@ -14,7 +14,7 @@ you will have access to the newest spots that are opening up. Lastly you will al
 Breweries that are in the area. Persist data I would like to keep the user’s favorite beer places and 
 previous drink searches.
 
-* [License](docs/license.md)
+* [License](docs/License.md)
 
 * [User stories](docs/user-stories.md)
 
