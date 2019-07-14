@@ -14,16 +14,15 @@
         <action
                 android:id="@+id/action_barFragment_to_beerFragment"
                 app:destination="@id/beerFragment"/>
-        <action
-                android:id="@+id/action_barFragment_to_happyHourFragment"
-                app:destination="@id/happyHourFragment"/>
     </fragment>
 
     <fragment
             android:id="@+id/beerFragment"
             android:name="edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment"
             android:label="fragment_beer"
-            tools:layout="@layout/fragment_beer"/>
+            tools:layout="@layout/fragment_beer">
+        <action android:id="@+id/action_beerFragment_to_happyHourFragment" app:destination="@id/happyHourFragment"/>
+    </fragment>
 
     <fragment
             android:id="@+id/happyHourFragment"

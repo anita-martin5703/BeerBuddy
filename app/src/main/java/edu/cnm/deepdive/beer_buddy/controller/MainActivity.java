@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.beer_buddy;
+package edu.cnm.deepdive.beer_buddy.controller;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BarFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.HappyHourFragment;

@@ -1,31 +1,20 @@
 package edu.cnm.deepdive.beer_buddy.model.fragments;
 
-import android.app.Activity;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link BarFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link BarFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class BarFragment extends Fragment {
 
     private Context context;
@@ -37,7 +26,7 @@ public class BarFragment extends Fragment {
     }
 
     public static BarFragment newInstance() {
-       return new BarFragment();
+        return new BarFragment();
     }
 
     @Override
@@ -47,6 +36,7 @@ public class BarFragment extends Fragment {
         final BarViewModel viewModel = ViewModelProviders.of(this).get(BarViewModel.class);
         viewModel.getBar().observe(this, bars -> {
             final ArrayAdapter<Bar> adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, bars);
+
             ListView barListview = view.findViewById(R.id.bars_list);
             barListview.setAdapter(adapter);
         });

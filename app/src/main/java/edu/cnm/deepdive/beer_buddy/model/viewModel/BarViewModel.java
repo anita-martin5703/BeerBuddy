@@ -33,6 +33,7 @@ public class BarViewModel extends AndroidViewModel {
 
   public void addBars(final Bar bar){
     new Thread(new Runnable() {
+
       @Override
       public void run() {
         BarDatabase db = BarDatabase.getInstance(getApplication());

@@ -18,9 +18,6 @@ import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class BeerFragment extends Fragment {
 
     private Context context;
