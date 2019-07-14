@@ -25,6 +25,7 @@ public abstract class BarDatabase extends RoomDatabase {
 
   private static BarDatabase INSTANCE;
 
+
   public static BarDatabase getInstance(Context context) {
     if (INSTANCE == null) {
       synchronized (BarDatabase.class) {
