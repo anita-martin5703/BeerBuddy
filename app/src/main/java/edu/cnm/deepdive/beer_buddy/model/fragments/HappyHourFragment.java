@@ -29,7 +29,7 @@ public class HappyHourFragment extends Fragment {
 
         final View view = inflater.inflate(R.layout.fragment_happy_hour, container, false);
 
-        final ListView barListView = view.findViewById(R.id.list_of_happy_hour_times);
+        final ListView HappyHourView = view.findViewById(R.id.list_of_happy_hour_times);
 
         return view;
     }

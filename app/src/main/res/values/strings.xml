@@ -8,4 +8,13 @@
     <string name="title_notifications">title_notification</string>
     <string name="bar_fragment_title">bar_fragment_title</string>
     <string name="beer_fragment">beer_fragment</string>
+    <string name="select_beer">Select Beer</string>
+    <string name="select_brewery">Select Brewery</string>
+    <string name="select_beer_type">Select Beer Type</string>
+    <string name="select_beer_style">Select Beer Style</string>
+    <string name="update_search">Update Search</string>
+    <string name="bar_name">Bar Name</string>
+    <string name="input_time">Input Time</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="add_button_hr">Add</string>
 </resources>

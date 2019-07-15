@@ -17,11 +17,12 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bar_name_edit_text"/>
 
     <EditText
             android:id="@+id/bar_name_edit_text"
-            android:hint="Bar Name"
+            android:hint="@string/bar_name"
             android:layout_width="220dp"
             android:layout_height="60dp"
             android:layout_marginTop="8dp"
@@ -31,11 +32,12 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/list_of_happy_hour_times"
-            app:layout_constraintBottom_toTopOf="@+id/bar_hours_for_happy_hour"/>
+            app:layout_constraintBottom_toTopOf="@+id/bar_hours_for_happy_hour"
+            android:gravity="center"/>
 
     <EditText
             android:id="@+id/bar_hours_for_happy_hour"
-            android:hint="Input Time"
+            android:hint="@string/input_time"
             android:layout_width="220dp"
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
@@ -45,11 +47,12 @@
             app:layout_constraintTop_toBottomOf="@id/bar_name_edit_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/address_of_bar"/>
+            app:layout_constraintBottom_toTopOf="@id/address_of_bar"
+            android:gravity="center"/>
 
     <EditText
             android:id="@+id/address_of_bar"
-            android:hint="Enter Address"
+            android:hint="@string/enter_address"
             android:layout_width="220dp"
             android:layout_height="60dp"
             android:layout_marginStart="8dp"
@@ -59,10 +62,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bar_hours_for_happy_hour"
-            app:layout_constraintBottom_toTopOf="@+id/button_submit_happy_hour_time"/>
+            app:layout_constraintBottom_toTopOf="@+id/button_submit_happy_hour_time"
+            android:gravity="center"/>
     <Button
             android:id="@+id/button_submit_happy_hour_time"
-            android:text="Add"
+            android:text="@string/add_button_hr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"

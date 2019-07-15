@@ -28,12 +28,13 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Select Beer"
+            android:hint="@string/select_beer"
             app:layout_constraintTop_toBottomOf="@+id/list_of_beers"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/select_brewery"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:gravity="center_horizontal">
     </TextView>
 
     <TextView
@@ -44,12 +45,13 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Select Brewery"
+            android:hint="@string/select_brewery"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_beer_name"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_type"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:gravity="center_horizontal">
     </TextView>
 
     <TextView
@@ -60,12 +62,13 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:hint="Select Beer Type"
+            android:hint="@string/select_beer_type"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_brewery"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_style"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:gravity="center_horizontal">
     </TextView>
 
     <TextView
@@ -76,17 +79,18 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:hint="Select Beer Style"
+            android:hint="@string/select_beer_style"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_beer_type"
             app:layout_constraintBottom_toTopOf="@+id/button_update_beer_list"
-            android:visibility="visible">
+            android:visibility="visible"
+            android:gravity="center_horizontal">
     </TextView>
 
     <Button
             android:id="@+id/button_update_beer_list"
-            android:text="Update Search"
+            android:text="@string/update_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
