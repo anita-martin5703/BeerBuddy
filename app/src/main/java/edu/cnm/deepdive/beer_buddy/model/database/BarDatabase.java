@@ -14,15 +14,12 @@ import edu.cnm.deepdive.beer_buddy.model.dao.BarBeerJoinDao;
 import edu.cnm.deepdive.beer_buddy.model.dao.BarDao;
 import edu.cnm.deepdive.beer_buddy.model.dao.BeerDao;
 
-@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1, exportSchema = false)
+@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1)
 public abstract class BarDatabase extends RoomDatabase {
 
   public abstract BarDao getBarListingDao();
-
   public abstract BeerDao getBeerListingDao();
-
   public abstract BarBeerJoinDao barBeerJoinDao();
-
   private static BarDatabase INSTANCE;
 
 
@@ -57,9 +54,6 @@ public abstract class BarDatabase extends RoomDatabase {
     protected Void doInBackground(Void... voids) {
       Bar marble = new Bar();
       marble.setName("Marble");
-      marble.setStreet("First and Lomas");
-      marble.setState("NM");
-      marble.setZip("87102");
       db.getBarListingDao().insert(marble);
       return null;
     }

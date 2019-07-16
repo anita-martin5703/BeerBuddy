@@ -13,23 +13,11 @@ public class Bar {
   @ColumnInfo(name = "bar_id", index = true)
   private long barId;
   private String name;
-  private String status;
-  private String street;
-  private String state;
-  private String zip;
-  private int number;
+  private String type;
+  private String location;
   @ColumnInfo(name = "projected_date", index = true)
   private String projectedDate;
 
-
-
-  public long getBarId() {
-    return barId;
-  }
-
-  public void setBarId(long barId) {
-    this.barId = barId;
-  }
 
   public long getId() {
     return id;
@@ -37,6 +25,14 @@ public class Bar {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  public long getBarId() {
+    return barId;
+  }
+
+  public void setBarId(long barId) {
+    this.barId = barId;
   }
 
   public String getName() {
@@ -47,44 +43,20 @@ public class Bar {
     this.name = name;
   }
 
-  public String getStatus() {
-    return status;
+  public String getType() {
+    return type;
   }
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setType(String type) {
+    this.type = type;
   }
 
-  public String getStreet() {
-    return street;
+  public String getLocation() {
+    return location;
   }
 
-  public void setStreet(String street) {
-    this.street = street;
-  }
-
-  public String getState() {
-    return state;
-  }
-
-  public void setState(String state) {
-    this.state = state;
-  }
-
-  public String getZip() {
-    return zip;
-  }
-
-  public void setZip(String zip) {
-    this.zip = zip;
-  }
-
-  public int getNumber() {
-    return number;
-  }
-
-  public void setNumber(int number) {
-    this.number = number;
+  public void setLocation(String location) {
+    this.location = location;
   }
 
   public String getProjectedDate() {
@@ -95,10 +67,10 @@ public class Bar {
     this.projectedDate = projectedDate;
   }
 
+
   @NonNull
   public String toString() {
     return name;
   }
-
 
 }

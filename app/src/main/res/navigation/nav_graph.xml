@@ -21,7 +21,8 @@
             android:name="edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment"
             android:label="fragment_beer"
             tools:layout="@layout/fragment_beer">
-        <action android:id="@+id/action_beerFragment_to_happyHourFragment" app:destination="@id/happyHourFragment"/>
+        <action android:id="@+id/action_beerFragment_to_happyHourFragment"
+                app:destination="@id/happyHourFragment"/>
     </fragment>
 
     <fragment

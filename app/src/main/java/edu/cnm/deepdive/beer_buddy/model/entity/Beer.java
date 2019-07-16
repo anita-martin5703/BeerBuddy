@@ -23,7 +23,9 @@ import java.io.Serializable;
   private String name;
   @ColumnInfo(name = "brewery_house", index = true)
   private String breweryHouse;
-  private String type;
+  @ColumnInfo(name = "beer_Abv", index = true)
+  private String beerAbv;
+  private String description;
   private String style;
 
 
@@ -59,12 +61,20 @@ import java.io.Serializable;
     this.breweryHouse = breweryHouse;
   }
 
-  public String getType() {
-    return type;
+  public String getBeerAbv() {
+    return beerAbv;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setBeerAbv(String beerAbv) {
+    this.beerAbv = beerAbv;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   public String getStyle() {

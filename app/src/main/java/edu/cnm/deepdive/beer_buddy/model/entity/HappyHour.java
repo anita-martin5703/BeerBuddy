@@ -21,6 +21,7 @@ public class HappyHour {
   private long id;
   @ColumnInfo(name = "bar_id", index = true)
   private long barId;
+  private String name;
   private String hours;
   private String weekdays;
 
@@ -39,6 +40,14 @@ public class HappyHour {
 
   public void setBarId(long barId) {
     this.barId = barId;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public String getHours() {

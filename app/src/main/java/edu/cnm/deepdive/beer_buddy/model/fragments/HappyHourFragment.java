@@ -30,7 +30,7 @@ public class HappyHourFragment extends Fragment {
         final View view = inflater.inflate(R.layout.fragment_happy_hour, container, false);
 
         final ListView HappyHourView = view.findViewById(R.id.list_of_happy_hour_times);
-
+// TODO implement to input bar name, hours, weekdays and update database.
         return view;
     }
 }

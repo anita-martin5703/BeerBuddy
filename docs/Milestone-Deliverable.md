@@ -11,7 +11,7 @@ will keep working the way I want it too.
 ## Walk Through
 As you open up the App you will find yourself in the main Map page. That is not working
 at the moment. Using the bottom navigation you can move through the different app windows.
-When you click on the Beer button it will take you to a Listing of beers and you can type your preferences.
+When you click on the Beer button it will take you to a Listing of beers and you can description your preferences.
 when you click on the Happy Hour button it takes you to a listing of Happy Hour Times and you
 can also add in a time of one that you don't see.
 

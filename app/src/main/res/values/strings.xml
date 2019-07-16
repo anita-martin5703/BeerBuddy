@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Beer Buddy</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="happy_hour_fragment">Hello blank fragment</string>
     <string name="title_home">title_home</string>
     <string name="title_dashboard">title_dashboard</string>
@@ -14,7 +12,13 @@
     <string name="select_beer_style">Select Beer Style</string>
     <string name="update_search">Update Search</string>
     <string name="bar_name">Bar Name</string>
-    <string name="input_time">Input Time</string>
+    <string name="input_time">Happy Hours</string>
     <string name="enter_address">Enter Address</string>
     <string name="add_button_hr">Add</string>
+    <string name="select_beer_abv">Select Beer ABV</string>
+    <string name="week_days">Week Days</string>
+    <string name="map_icon">MAP</string>
+    <string name="beer_icon">BEER</string>
+    <string name="happy_hour_icon">HAPPY HOUR</string>
+    <string name="authentication_error">Unable to authenticate user</string>
 </resources>

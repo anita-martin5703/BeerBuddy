@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.R;
-import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 
@@ -63,15 +62,11 @@ public class BeerFragment extends Fragment {
         newBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText selectBeerName = view.findViewById(R.id.select_beer_name);
-                EditText selectBrewery = view.findViewById(R.id.select_brewery);
-                EditText selectBeerType = view.findViewById(R.id.select_beer_type);
-                EditText selectBeerStyle = view.findViewById(R.id.select_beer_style);
+                TextView selectBeerName = view.findViewById(R.id.select_beer_name);
+                TextView selectBeerType = view.findViewById(R.id.select_beer_abv);
                 Beer newBeer = new Beer();
                 newBeer.setName(selectBeerName.getText().toString());
-                newBeer.setBreweryHouse(selectBrewery.getText().toString());
-                newBeer.setType(selectBeerType.getText().toString());
-                newBeer.setStyle(selectBeerStyle.getText().toString());
+                newBeer.setDescription(selectBeerType.getText().toString());
                 viewModel.addBeers(newBeer);
             }
         });
