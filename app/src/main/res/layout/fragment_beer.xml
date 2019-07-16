@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".model.fragments.BeerFragment"
         android:id="@+id/bar_layout"
-        android:backgroundTint="@color/beerBackground">
+        android:background="@color/LightSteelBlue">
 
     <ListView
             android:id="@+id/list_of_beers"

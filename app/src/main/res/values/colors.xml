@@ -3,7 +3,7 @@
   <color name="colorPrimary">#243665</color>
   <color name="colorPrimaryDark">#8BD8BD</color>
   <color name="colorAccent">#161B21</color>
-  <color name="mapBackground">#67fca3</color>
-  <color name="beerBackground">#FB934E</color>
-  <color name="happyHourBackground">#4EB6FB</color>
+  <color name="Honeydew">#F0FFF0</color>
+  <color name="LightSteelBlue">#B0C4DE</color>
+  <color name="Cornsilk">#FFF8DC</color>
 </resources>

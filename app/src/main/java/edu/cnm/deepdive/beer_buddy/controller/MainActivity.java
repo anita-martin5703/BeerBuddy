@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (menuItem.getItemId()) {
 
-            case R.id.navigation_map:
+            case R.id.navigation_bar:
                 fragment = new BarFragment();
                 break;
 

@@ -37,7 +37,7 @@ public class BarFragment extends Fragment {
         viewModel.getBar().observe(this, bars -> {
             final ArrayAdapter<Bar> adapter = new ArrayAdapter<>(context, android.R.layout.simple_list_item_1, bars);
 
-            ListView barListview = view.findViewById(R.id.bars_list);
+            ListView barListview = view.findViewById(R.id.list_of_bars);
             barListview.setAdapter(adapter);
         });
         return inflater.inflate(R.layout.fragment_bar, null);

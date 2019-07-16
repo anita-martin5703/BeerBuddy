@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".model.fragments.HappyHourFragment"
         android:id="@+id/happy_hour_layout"
-        android:backgroundTint="@color/happyHourBackground">
+        android:background="@color/Cornsilk">
 
     <ListView
             android:id="@+id/list_of_happy_hour_times"
