@@ -31,3 +31,7 @@ previous drink searches.
 # Milestone #2
 
 Please [click](docs/Milestone-Deliverable.md) here to see the process of my deliveriable
+
+# DDL for Data Model
+
+* [Data Model](docs/data-model.md)
