@@ -38,4 +38,4 @@ Please [click](docs/Milestone-Deliverable.md) here to see the process of my deli
 
 # Java Documentation
 
-* [Java Docs](file:///C:/Users/anita/Desktop/bootcamp/projects/BeerBuddy/docs/api/index.html)
+* [Java Docs](docs/api/overview-summary.html)
