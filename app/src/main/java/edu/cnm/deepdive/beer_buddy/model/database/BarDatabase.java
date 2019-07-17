@@ -27,7 +27,7 @@ public abstract class BarDatabase extends RoomDatabase {
     if (INSTANCE == null) {
       synchronized (BarDatabase.class) {
         INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-            BarDatabase.class, "bar_room")
+            BarDatabase.class, "bar_room_database")
             .fallbackToDestructiveMigration()
             .addCallback(new Callback() {
               @Override
