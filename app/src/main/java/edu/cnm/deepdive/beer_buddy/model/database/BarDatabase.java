@@ -17,45 +17,55 @@ import edu.cnm.deepdive.beer_buddy.model.dao.BeerDao;
 @Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1, exportSchema = false)
 public abstract class BarDatabase extends RoomDatabase {
 
-  public abstract BarDao getBarListingDao();
-  public abstract BeerDao getBeerListingDao();
-  public abstract BarBeerJoinDao barBeerJoinDao();
-  private static BarDatabase INSTANCE;
+    public abstract BarDao getBarListingDao();
 
+    public abstract BeerDao getBeerListingDao();
 
-  public static BarDatabase getInstance(Context context) {
-    if (INSTANCE == null) {
-      synchronized (BarDatabase.class) {
-        INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-            BarDatabase.class, "bar_room_database")
-            .fallbackToDestructiveMigration()
-            .addCallback(new Callback() {
-              @Override
-              public void onCreate(@NonNull SupportSQLiteDatabase db) {
-                super.onCreate(db);
-                new PopulateDbTask(INSTANCE).execute();
-              }
-            }).build();
-      }
+    public abstract BarBeerJoinDao barBeerJoinDao();
+
+    private static BarDatabase INSTANCE;
+
+    public static BarDatabase getInstance(Context context) {
+        if (INSTANCE == null) {
+            synchronized (BarDatabase.class) {
+                INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
+                        BarDatabase.class, "bar_room_database")
+                        .fallbackToDestructiveMigration()
+                        .addCallback(new Callback() {
+                            @Override
+                            public void onCreate(@NonNull SupportSQLiteDatabase db) {
+                                super.onCreate(db);
+                                new PopulateDbTask(INSTANCE).execute();
+                            }
+                        }).build();
+            }
+        }
+
+        return INSTANCE;
     }
 
-    return INSTANCE;
-  }
+    private static BarDatabase.Callback sBarDatabaseCallback = new BarDatabase.Callback() {
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            new PopulateDbTask(INSTANCE).execute();
+        }
+    };
 
-  private static class PopulateDbTask extends AsyncTask<Void, Void, Void> {
+    private static class PopulateDbTask extends AsyncTask<Void, Void, Void> {
 
-    private final BarDatabase db;
+        private final BarDatabase db;
 
-    PopulateDbTask(BarDatabase db) {
-      this.db = db;
+        PopulateDbTask(BarDatabase db) {
+            this.db = db;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            Bar marble = new Bar();
+            marble.setName("Marble");
+            db.getBarListingDao().insert(marble);
+            return null;
+        }
     }
-
-    @Override
-    protected Void doInBackground(Void... voids) {
-      Bar marble = new Bar();
-      marble.setName("Marble");
-      db.getBarListingDao().insert(marble);
-      return null;
-    }
-  }
 }

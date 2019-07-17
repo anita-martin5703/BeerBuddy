@@ -2,6 +2,7 @@ package edu.cnm.deepdive.beer_buddy.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +26,26 @@ public class MainActivity extends AppCompatActivity
         navigationView.setOnNavigationItemSelectedListener(this);
         loadFragment(new BarFragment());
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.navigation, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        boolean handled = true;
+        switch (item.getItemId()) {
+            case R.id.sign_out:
+                signOut();
+                break;
+            default:
+                handled = super.onOptionsItemSelected(item);
+        }
+        return handled;
+    }
+
 
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {

@@ -62,8 +62,8 @@ public class BeerFragment extends Fragment {
         newBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView selectBeerName = view.findViewById(R.id.select_beer_name);
-                TextView selectBeerType = view.findViewById(R.id.select_beer_abv);
+                EditText selectBeerName = view.findViewById(R.id.select_beer_name);
+                EditText selectBeerType = view.findViewById(R.id.select_beer_abv);
                 Beer newBeer = new Beer();
                 newBeer.setName(selectBeerName.getText().toString());
                 newBeer.setDescription(selectBeerType.getText().toString());
