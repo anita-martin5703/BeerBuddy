@@ -30,8 +30,13 @@ previous drink searches.
     
 # Milestone #2
 
-Please [click](docs/Milestone-Deliverable.md) here to see the process of my deliveriable
+Please [click](docs/Milestone-Deliverable.md) here to see the process of my deliverable.
 
 # DDL for Data Model
 
 * [Data Model](docs/data-model.md)
+
+# Java Documentation
+
+* [Java Docs]
+file:///C:/Users/anita/Desktop/bootcamp/projects/BeerBuddy/docs/api/edu/cnm/deepdive/beer_buddy/model/database/BarDatabase.html
