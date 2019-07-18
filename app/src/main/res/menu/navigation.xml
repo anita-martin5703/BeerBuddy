@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
-        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
   <item
-    android:id="@+id/navigation_bar"
-    android:icon="@drawable/ic_home_black_24dp"
-    android:title="@string/bar_icon"/>
+          android:id="@+id/navigation_bar"
+          android:icon="@drawable/ic_home_black_24dp"
+          android:title="@string/bar_icon"/>
 
   <item
-    android:id="@+id/navigation_beer"
-    android:icon="@drawable/ic_dashboard_black_24dp"
-    android:title="@string/beer_icon"/>
+          android:id="@+id/navigation_beer"
+          android:icon="@drawable/ic_dashboard_black_24dp"
+          android:title="@string/beer_icon"/>
 
   <item
-    android:id="@+id/navigation_happy_hour"
-    android:icon="@drawable/ic_notifications_black_24dp"
-    android:title="@string/happy_hour_icon"/>
-
+          android:id="@+id/navigation_happy_hour"
+          android:icon="@drawable/ic_notifications_black_24dp"
+          android:title="@string/happy_hour_icon"/>
   <item
     android:id="@+id/sign_out"
     android:title="@string/sign_out"
