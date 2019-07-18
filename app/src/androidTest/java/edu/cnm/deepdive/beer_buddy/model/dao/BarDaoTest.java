@@ -1,22 +1,27 @@
 package edu.cnm.deepdive.beer_buddy.model.dao;
 
-import android.app.Application;
 import android.content.Context;
-import androidx.lifecycle.LifecycleOwner;
-import androidx.lifecycle.LifecycleRegistry;
+import android.database.sqlite.SQLiteConstraintException;
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule;
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.filters.SmallTest;
 import edu.cnm.deepdive.beer_buddy.model.database.BarDatabase;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
+import edu.cnm.deepdive.beer_buddy.model.util.LiveDataTestUtil;
 import org.junit.*;
+import org.junit.rules.TestRule;
 import org.junit.runners.MethodSorters;
+
 import static org.junit.Assert.*;
-import org.mockito.Mockito;
+
 
 @SmallTest
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BarDaoTest {
+
+    @Rule
+    public TestRule rule = new InstantTaskExecutorRule();
 
     private static BarDatabase db;
     private static BarDao dao;
@@ -25,7 +30,9 @@ public class BarDaoTest {
     @BeforeClass
     public static void setup() throws Exception {
         Context context = ApplicationProvider.getApplicationContext();
-        db = Room.inMemoryDatabaseBuilder(context, BarDatabase.class).build();
+        db = Room.inMemoryDatabaseBuilder(context, BarDatabase.class)
+                .allowMainThreadQueries()
+                .build();
         dao = db.getBarListingDao();
     }
 
@@ -40,7 +47,7 @@ public class BarDaoTest {
         assertTrue(barId > 0);
     }
 
-    @Test(expected = Exception.class) // This should pass because we EXPECTED it to fail (Test passed means fail)
+    @Test(expected = SQLiteConstraintException.class) // This should pass because we EXPECTED it to fail (Test passed means fail)
     public void insertNullBar() {
         Bar bar = new Bar();
         long id = dao.insert(bar);
@@ -49,13 +56,11 @@ public class BarDaoTest {
 
 
     @Test
-    public void postInsertFindById() {
-        LifecycleOwner owner = Mockito.mock(LifecycleOwner.class);
-        dao.findById(barId).observe(owner, (movie) -> {
-
-        });
+    public void postInsertFindById() throws InterruptedException {
+        Bar bar = LiveDataTestUtil.getValue(dao.findById(barId));
+        assertNotNull(bar);
+        assertEquals("Marble", bar.getName());
     }
-
     @AfterClass
     public static void tearDown() throws Exception {
         db.close();
