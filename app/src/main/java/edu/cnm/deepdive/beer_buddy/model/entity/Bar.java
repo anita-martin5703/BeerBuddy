@@ -12,6 +12,7 @@ public class Bar {
   private long id;
   @ColumnInfo(name = "bar_id", index = true)
   private long barId;
+  @NonNull
   private String name;
   private String type;
   private String location;
