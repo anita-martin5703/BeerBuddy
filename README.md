@@ -32,6 +32,10 @@ previous drink searches.
 
 Please [click](docs/Milestone-Deliverable.md) here to see the process of my deliverable.
 
+# License
+Copyright 2019 Anita Martin. All rights reserved.
+Please [click](docs/License.md) here for license information.
+
 # DDL for Data Model
 
 * [Data Model](docs/data-model.md)

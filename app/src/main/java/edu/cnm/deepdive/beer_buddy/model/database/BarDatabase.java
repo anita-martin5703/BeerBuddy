@@ -18,9 +18,7 @@ import edu.cnm.deepdive.beer_buddy.model.dao.BeerDao;
 public abstract class BarDatabase extends RoomDatabase {
 
     public abstract BarDao getBarListingDao();
-
     public abstract BeerDao getBeerListingDao();
-
     public abstract BarBeerJoinDao barBeerJoinDao();
 
     private static BarDatabase INSTANCE;

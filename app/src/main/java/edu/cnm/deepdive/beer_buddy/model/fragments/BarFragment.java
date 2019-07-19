@@ -29,6 +29,7 @@ public class BarFragment extends Fragment {
         return new BarFragment();
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,5 +43,6 @@ public class BarFragment extends Fragment {
         });
         return inflater.inflate(R.layout.fragment_bar, null);
     }
+
 
 }

@@ -7,12 +7,15 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import edu.cnm.deepdive.beer_buddy.LoginActivity;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BarFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.HappyHourFragment;
+import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
+import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity
@@ -23,8 +26,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_main);
-        navigationView.setOnNavigationItemSelectedListener(this);
-        loadFragment(new BarFragment());
     }
 
     @Override

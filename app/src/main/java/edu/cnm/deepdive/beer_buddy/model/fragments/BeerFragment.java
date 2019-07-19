@@ -56,18 +56,21 @@ public class BeerFragment extends Fragment {
             }
         });
 
-        // TODO find out if I need a spinner.
 
         Button newBeerButton = view.findViewById(R.id.button_update_beer_list);
         newBeerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText selectBeerName = view.findViewById(R.id.select_beer_name);
-                EditText selectBeerType = view.findViewById(R.id.select_beer_abv);
+                TextView selectBeerName = view.findViewById(R.id.select_beer_name);
+                TextView selectBrewery = view.findViewById(R.id.select_brewery);
+                TextView selectBeerAbv = view.findViewById(R.id.select_beer_abv);
+                TextView selectBeerStyle = view.findViewById(R.id.select_beer_style);
                 Beer newBeer = new Beer();
                 newBeer.setName(selectBeerName.getText().toString());
-                newBeer.setDescription(selectBeerType.getText().toString());
-                viewModel.addBeers(newBeer);
+                newBeer.setBreweryHouse(selectBrewery.getText().toString());
+                newBeer.setBeerAbv(selectBeerAbv.getText().toString());
+                newBeer.setStyle(selectBeerStyle.getText().toString());
+                viewModel.updateBeers(newBeer);
             }
         });
         return view;

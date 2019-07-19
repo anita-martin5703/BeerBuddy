@@ -42,7 +42,7 @@ public class BarViewModel extends AndroidViewModel {
     }).start();
   }
 
-  public void addBeers (final Beer beer){
+  public void updateBeers(final Beer beer){
     new Thread(new Runnable() {
       @Override
       public void run() {
