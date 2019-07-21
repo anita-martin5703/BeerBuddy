@@ -41,6 +41,5 @@ public interface BarService {
             INSTANCE = retrofit.create(BarService.class);
 
         }
-
     }
 }

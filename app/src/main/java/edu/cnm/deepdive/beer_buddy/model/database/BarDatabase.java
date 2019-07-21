@@ -1,5 +1,4 @@
 package edu.cnm.deepdive.beer_buddy.model.database;
-
 import android.content.Context;
 import android.os.AsyncTask;
 import androidx.annotation.NonNull;
@@ -43,6 +42,7 @@ public abstract class BarDatabase extends RoomDatabase {
     }
 
     private static BarDatabase.Callback sBarDatabaseCallback = new BarDatabase.Callback() {
+
         @Override
         public void onOpen(@NonNull SupportSQLiteDatabase db) {
             super.onOpen(db);
@@ -60,10 +60,7 @@ public abstract class BarDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            Bar marble = new Bar();
-            marble.setName("Marble");
-            db.getBarListingDao().insert(marble);
             return null;
         }
-    }
-}
+
+    }}

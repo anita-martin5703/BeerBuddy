@@ -19,6 +19,13 @@ public class Bar {
   @ColumnInfo(name = "projected_date", index = true)
   private String projectedDate;
 
+  public Bar(String name, String type, String location, String projectedDate) {
+    this.name = name;
+    this.type= type;
+    this.location = location;
+    this.projectedDate = projectedDate;
+  }
+
 
   public long getId() {
     return id;

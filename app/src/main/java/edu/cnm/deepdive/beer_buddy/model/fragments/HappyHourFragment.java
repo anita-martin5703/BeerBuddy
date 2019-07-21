@@ -12,25 +12,4 @@ import edu.cnm.deepdive.beer_buddy.R;
 
 public class HappyHourFragment extends Fragment {
 
-    private Context context;
-
-    public HappyHourFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        this.context = context;
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        final View view = inflater.inflate(R.layout.fragment_happy_hour, container, false);
-
-        final ListView HappyHourView = view.findViewById(R.id.list_of_happy_hour_times);
-// TODO implement to input bar name, hours, weekdays and update database.
-        return view;
-    }
 }

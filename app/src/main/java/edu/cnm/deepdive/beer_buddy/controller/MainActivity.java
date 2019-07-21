@@ -18,14 +18,12 @@ import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
 
-public class MainActivity extends AppCompatActivity
-        implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navigationView = findViewById(R.id.bottom_navigation_main);
     }
 
     @Override
@@ -34,55 +32,15 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        boolean handled = true;
-        switch (item.getItemId()) {
-            case R.id.sign_out:
-                signOut();
-                break;
-            default:
-                handled = super.onOptionsItemSelected(item);
-        }
-        return handled;
-    }
-
-
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
-
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.nav_host_fragment, fragment)
                     .commit();
-
             return true;
         }
         return false;
-    }
-
-    // Bottom Navigation is used to navigate between main windows.
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        Fragment fragment = null;
-
-        switch (menuItem.getItemId()) {
-
-            case R.id.navigation_bar:
-                fragment = new BarFragment();
-                break;
-
-            case R.id.navigation_beer:
-                fragment = new BeerFragment();
-                break;
-
-            case R.id.navigation_happy_hour:
-                fragment = new HappyHourFragment();
-                break;
-        }
-
-        return loadFragment(fragment);
     }
 
     // This method is used to sign-out from Google.
@@ -94,6 +52,26 @@ public class MainActivity extends AppCompatActivity
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         });
+    }
+
+    // Navigation is used to navigate between main windows.
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
+        Fragment fragment = null;
+        switch (menuItem.getItemId()) {
+            case R.id.navigation_bar:
+                fragment = new BarFragment();
+                break;
+            case R.id.navigation_beer:
+                fragment = new BeerFragment();
+                break;
+            case R.id.navigation_happy_hour:
+                fragment = new HappyHourFragment();
+                break;
+            case R.id.sign_out:
+                signOut();
+        }
+        return loadFragment(fragment);
     }
 
 }
