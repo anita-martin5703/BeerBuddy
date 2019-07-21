@@ -17,7 +17,7 @@ public class BeerViewModel extends AndroidViewModel {
     super(application);
   }
 
-  public LiveData<List<Beer>> getBars(long barId){
+  public LiveData<List<Beer>> getBeers(long barId){
     beers = BarDatabase.getInstance(getApplication()).barBeerJoinDao().getbarBeerJoinTable(barId);
     return beers;
   }

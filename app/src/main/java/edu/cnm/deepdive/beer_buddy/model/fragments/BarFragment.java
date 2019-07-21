@@ -76,12 +76,12 @@ public class BarFragment extends Fragment implements View.OnClickListener {
             String getProjectedDate = projectedDate.getText().toString();
             Bar bar = new Bar(name, type, location, getProjectedDate);
             barViewModel.insert(bar);
-            selectBar.setText("");
-            selectBar.setText("");
-            selectLocation.setText("");
-            projectedDate.setText("");
+            selectBar.setText("barTest");
+            selectType.setText("typeTest");
+            selectLocation.setText("locationTest");
+            projectedDate.setText("pjTest");
         } else {
-            Toast.makeText(getActivity(), "Incorrect Information", Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(), "Please Try Again", Toast.LENGTH_LONG).show();
         }
     }
 }

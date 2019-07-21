@@ -28,8 +28,12 @@ import java.io.Serializable;
   private String description;
   private String style;
 
+  public Beer(String name, String breweryHouse, String beerAbv, String style) {
 
-  public Long getId() {
+  }
+
+
+    public Long getId() {
     return id;
   }
 

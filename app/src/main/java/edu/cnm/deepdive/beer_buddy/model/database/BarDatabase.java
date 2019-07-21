@@ -16,11 +16,15 @@ import edu.cnm.deepdive.beer_buddy.model.dao.BeerDao;
 @Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1, exportSchema = false)
 public abstract class BarDatabase extends RoomDatabase {
 
-    public abstract BarDao getBarListingDao();
-    public abstract BeerDao getBeerListingDao();
-    public abstract BarBeerJoinDao barBeerJoinDao();
-
     private static BarDatabase INSTANCE;
+    private static BarDatabase.Callback sBarDatabaseCallback = new BarDatabase.Callback() {
+
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
+            new PopulateDbTask(INSTANCE).execute();
+        }
+    };
 
     public static BarDatabase getInstance(Context context) {
         if (INSTANCE == null) {
@@ -41,14 +45,11 @@ public abstract class BarDatabase extends RoomDatabase {
         return INSTANCE;
     }
 
-    private static BarDatabase.Callback sBarDatabaseCallback = new BarDatabase.Callback() {
+    public abstract BarDao getBarListingDao();
 
-        @Override
-        public void onOpen(@NonNull SupportSQLiteDatabase db) {
-            super.onOpen(db);
-            new PopulateDbTask(INSTANCE).execute();
-        }
-    };
+    public abstract BeerDao getBeerListingDao();
+
+    public abstract BarBeerJoinDao barBeerJoinDao();
 
     private static class PopulateDbTask extends AsyncTask<Void, Void, Void> {
 
@@ -60,6 +61,10 @@ public abstract class BarDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
+            Bar bar = new Bar("Marble", "Brewery", "First and Lomas","N/A");
+            db.getBarListingDao().insert(bar);
+            Beer beer = new Beer("", "", "", "");
+              db.getBeerListingDao().insert(beer);
             return null;
         }
 

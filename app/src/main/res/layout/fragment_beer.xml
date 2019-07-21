@@ -20,7 +20,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_name"/>
 
-    <TextView
+    <EditText
             android:id="@+id/select_beer_name"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -33,11 +33,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/select_brewery"
-            android:visibility="visible"
-            android:gravity="center_horizontal">
-    </TextView>
+            android:gravity="center_horizontal"
+            android:inputType="text">
+    </EditText>
 
-    <TextView
+    <EditText
             android:id="@+id/select_brewery"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -50,11 +50,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_beer_name"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_abv"
-            android:visibility="visible"
-            android:gravity="center_horizontal">
-    </TextView>
+            android:gravity="center_horizontal"
+            android:inputType="text">
+    </EditText>
 
-    <TextView
+    <EditText
             android:id="@+id/select_beer_abv"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -67,11 +67,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_brewery"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_style"
-            android:visibility="visible"
-            android:gravity="center_horizontal">
-    </TextView>
+            android:gravity="center_horizontal"
+            android:inputType="number">
+    </EditText>
 
-    <TextView
+    <EditText
             android:id="@+id/select_beer_style"
             android:layout_width="match_parent"
             android:layout_height="45dp"
@@ -84,9 +84,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_beer_abv"
             app:layout_constraintBottom_toTopOf="@+id/button_update_beer_list"
-            android:visibility="visible"
-            android:gravity="center_horizontal">
-    </TextView>
+            android:gravity="center_horizontal"
+            android:inputType="text">
+    </EditText>
 
     <Button
             android:id="@+id/button_update_beer_list"
