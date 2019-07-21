@@ -25,6 +25,9 @@ public class HappyHour {
   private String hours;
   private String weekdays;
 
+  public HappyHour (String name, String hours, String weekdays) {
+
+  }
 
   public long getId() {
     return id;

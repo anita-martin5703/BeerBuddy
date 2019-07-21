@@ -25,4 +25,5 @@ public class BarViewModel extends AndroidViewModel {
 
   public void insert (Bar bar) {
     barRepository.insert(bar);
-  }}
+  }
+}

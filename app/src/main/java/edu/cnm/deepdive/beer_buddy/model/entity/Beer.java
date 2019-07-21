@@ -24,11 +24,11 @@ import java.io.Serializable;
   @ColumnInfo(name = "brewery_house", index = true)
   private String breweryHouse;
   @ColumnInfo(name = "beer_Abv", index = true)
-  private String beerAbv;
+  private int beerAbv;
   private String description;
   private String style;
 
-  public Beer(String name, String breweryHouse, String beerAbv, String style) {
+  public Beer(String name, String breweryHouse, int beerAbv, String style) {
 
   }
 
@@ -65,11 +65,11 @@ import java.io.Serializable;
     this.breweryHouse = breweryHouse;
   }
 
-  public String getBeerAbv() {
+  public int getBeerAbv() {
     return beerAbv;
   }
 
-  public void setBeerAbv(String beerAbv) {
+  public void setBeerAbv(int beerAbv) {
     this.beerAbv = beerAbv;
   }
 

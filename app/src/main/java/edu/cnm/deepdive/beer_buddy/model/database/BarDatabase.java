@@ -63,7 +63,7 @@ public abstract class BarDatabase extends RoomDatabase {
         protected Void doInBackground(Void... voids) {
             Bar bar = new Bar("Marble", "Brewery", "First and Lomas","N/A");
             db.getBarListingDao().insert(bar);
-            Beer beer = new Beer("", "", "", "");
+            Beer beer = new Beer("", "", 1, "");
               db.getBeerListingDao().insert(beer);
             return null;
         }

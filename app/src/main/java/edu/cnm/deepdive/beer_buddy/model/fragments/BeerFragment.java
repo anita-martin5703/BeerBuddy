@@ -81,7 +81,7 @@ public class BeerFragment extends Fragment implements View.OnClickListener {
                 && TextUtils.isEmpty(selectBeerAbv.getText().toString()) && TextUtils.isEmpty(selectBeerStyle.getText().toString())) {
             String name = selectBeer.getText().toString();
             String brewery = selectBrewery.getText().toString();
-            String beerAbv = selectBeerAbv.getText().toString();
+            int beerAbv = selectBeerAbv.getInputType();
             String beerStyle = selectBeerStyle.getText().toString();
             Beer beer = new Beer(name, brewery, beerAbv, beerStyle);
             beerInfoView.isActivated();
