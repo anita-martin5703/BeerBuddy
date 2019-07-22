@@ -7,18 +7,34 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProviders;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.beer_buddy.LoginActivity;
 import edu.cnm.deepdive.beer_buddy.R;
+import edu.cnm.deepdive.beer_buddy.model.database.BarDatabase;
+import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BarFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.HappyHourFragment;
-import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
-import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
+import edu.cnm.deepdive.beer_buddy.service.BarService;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
+import retrofit2.Call;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+//    private static Retrofit retrofit = null;
+//    private RecyclerView recyclerView = null;
+//
+//    BarService barService = retrofit.create(BarService.class);
+//
+//    Call<Bar> call = (Call<Bar>) barService.search("q");
+//
+//    public void onResponse(Call<BarService> call, Response<BarService> response) {
+//        List<Bar> bars = (List<Bar>) BarService.getInstance();
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     // This method is used to sign-out from Google.
     private void signOut() {
         GoogleSignInService service = GoogleSignInService.getInstance();
-        service.getClient().signOut().addOnCompleteListener((task) ->{
+        service.getClient().signOut().addOnCompleteListener((task) -> {
             service.setAccount(null);
             Intent intent = new Intent(this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
