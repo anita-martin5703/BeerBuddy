@@ -1,29 +1,46 @@
 package edu.cnm.deepdive.beer_buddy.model.viewModel;
+
 import android.app.Application;
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.LiveData;
+import androidx.lifecycle.*;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
-import edu.cnm.deepdive.beer_buddy.repository.BarRepository;
+import edu.cnm.deepdive.beer_buddy.service.BarService;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class BarViewModel extends AndroidViewModel {
 
-  private BarRepository barRepository;
-  private LiveData<List<Bar>> mAllBars;
+    private MutableLiveData<List<Bar>> mAllBars;
+    private CompositeDisposable pending = new CompositeDisposable();
 
-  public BarViewModel(@NonNull Application application) {
-    super(application);
-    barRepository = new BarRepository(application);
-    mAllBars = BarRepository.getAllBars();
-  }
+    public BarViewModel(@NonNull Application application) {
+        super(application);
+    }
 
-  public LiveData<List<Bar>> getAllBars() {
-    return mAllBars;
-  }
+    public LiveData<List<Bar>> getmAllBars(String term) {
+        if (mAllBars == null) {
+            mAllBars = new MutableLiveData<>();
+        }
+        if (term != null) {
+            pending.add(
+                    BarService.getInstance().getBars(term)
+                            .subscribeOn(Schedulers.io())
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribe((bars -> mAllBars.setValue(bars))
+                            ));
+        } else {
+            mAllBars.setValue(new LinkedList<>());
+        }
+        return mAllBars;
+    }
 
-  public void insert (Bar bar) {
-    barRepository.insert(bar);
-  }
+    @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+    public void disposePending() {
+        pending.clear();
+    }
+
 }

@@ -1,27 +1,30 @@
 package edu.cnm.deepdive.beer_buddy.model.fragments;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleObserver;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 
 
-public class BarFragment extends Fragment implements View.OnClickListener {
+public class BarFragment extends Fragment {
 
-    private View barInfoView = null;
     private BarViewModel barViewModel;
+    private ListView searchResultsBar;
+    private EditText barName;
+    private EditText barType;
+    private EditText barLocation;
+    private EditText barProjectedDate;
+    private ImageButton updateSearch;
+    private ImageButton clear;
 
     public BarFragment() {
         //Required empty constructor
@@ -30,7 +33,8 @@ public class BarFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        barViewModel = ViewModelProviders.of(getActivity()).get(BarViewModel.class);
+        setupBarViewModel();
+        setupBarSearch();
     }
 
     @Nullable
@@ -38,50 +42,45 @@ public class BarFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        barInfoView = inflater.inflate(R.layout.fragment_bar, container, false);
-        initViews(barInfoView);
-
+        View barInfoView = inflater.inflate(R.layout.fragment_bar, container, false);
         return barInfoView;
     }
 
-    private EditText selectBar;
-    private EditText selectType;
-    private EditText selectLocation;
-    private EditText projectedDate;
-    private Button updateSearch;
-
-    @SuppressLint("WrongViewCast")
-    private void initViews(View view) {
-        selectBar = (EditText) view.findViewById(R.id.select_bar_name);
-        selectType = (EditText) view.findViewById(R.id.select_type_of_bar);
-        selectLocation = (EditText) view.findViewById(R.id.select_bar_location);
-        projectedDate = (EditText) view.findViewById(R.id.projected_date);
-        updateSearch = (Button) view.findViewById(R.id.button_update_bar_list);
-        updateSearch.setOnClickListener(this);
+    private void setupBarSearch() {
+        barName = barName.findViewById(R.id.select_bar_name);
+        barType = barType.findViewById(R.id.select_type_of_bar);
+        barLocation = barLocation.findViewById(R.id.select_bar_location);
+        barProjectedDate = barType.findViewById(R.id.projected_date);
+        updateSearch = updateSearch.findViewById(R.id.search);
+        clear = clear.findViewById(R.id.clear);
+        searchResultsBar = searchResultsBar.findViewById(R.id.list_of_bars);
+        updateSearch.setOnClickListener((v -> barViewModel.getmAllBars(barName.getText().toString().trim())));
+        clear.setOnClickListener((v -> {
+            barName.getText().clear();
+            barViewModel.getmAllBars(null);
+        }));
+        searchResultsBar.setOnItemClickListener((adapterView, view1, position, rowId) -> {
+            Bar bar = (Bar) adapterView.getItemAtPosition(position);
+            String term = barName.getText().toString().trim();
+            String barTitle = term.isEmpty() ? getString(R.string.search_all_bar)
+                    : getString(R.string.search_bar, term);
+            Runnable next = (position >= adapterView.getCount() - 1) ? null : () -> {
+                if (position < adapterView.getCount() - 1) {
+                    searchResultsBar.performItemClick(null, position + 1,
+                            searchResultsBar.getItemIdAtPosition(position + 1));
+                }
+            };
+        });
     }
 
-    @Override
-    public void onClick(View view) {
-        if (view.getId() == R.id.button_update_bar_list) {
-            updateBarInfo();
-        }
+    private void setupBarViewModel() {
+        barViewModel = ViewModelProviders.of(this).get(BarViewModel.class);
+        getLifecycle().addObserver((LifecycleObserver) barViewModel);
+        barViewModel.getmAllBars(null).observe(this, (bars -> {
+            ArrayAdapter<Bar> adapter = new ArrayAdapter<>(this, R.layout.fragment_bar, bars);
+            searchResultsBar.setAdapter(adapter);
+        }));
     }
 
-    private void updateBarInfo() {
-        if (!TextUtils.isEmpty(selectBar.getText().toString()) && !TextUtils.isEmpty(selectType.getText().toString())
-                && TextUtils.isEmpty(selectLocation.getText().toString()) && TextUtils.isEmpty(projectedDate.getText().toString())) {
-            String name = selectBar.getText().toString();
-            String type = selectType.getText().toString();
-            String location = selectLocation.getText().toString();
-            String getProjectedDate = projectedDate.getText().toString();
-            Bar bar = new Bar(name, type, location, getProjectedDate);
-            barViewModel.insert(bar);
-            selectBar.setText("barTest");
-            selectType.setText("typeTest");
-            selectLocation.setText("locationTest");
-            projectedDate.setText("pjTest");
-        } else {
-            Toast.makeText(getActivity(), "Please Try Again", Toast.LENGTH_LONG).show();
-        }
-    }
+
 }

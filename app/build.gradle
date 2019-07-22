@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+def getServicesProperty(String property) {
+    Properties properties = new Properties()
+    properties.load(new FileInputStream("../keys/key.properties"))
+    return String.format("\"%s\"", properties.getProperty(property))
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {

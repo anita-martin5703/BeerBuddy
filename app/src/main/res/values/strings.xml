@@ -27,4 +27,13 @@
     <string name="projected_date_text">Projected Date</string>
     <string name="bar_icon">BAR</string>
     <string name="sign_out">SIGN OUT</string>
+    <string name="search_bar">Search Bar: %s</string>
+    <string name="search_all_bar">All Bars</string>
+    <string name="search_beer">Search Beer: %s</string>
+    <string name="search_all_beer">All Beer</string>
+    <string name="search_description">search_description</string>
+    <string name="clear_description">clear_description</string>
+    <string name="set_text_bar">Select Bar</string>
+    <string name="set_text_time">Input Time</string>
+    <string name="set_text_weekday">Input Weekday</string>>
 </resources>

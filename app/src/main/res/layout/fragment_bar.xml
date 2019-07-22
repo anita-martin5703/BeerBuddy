@@ -34,7 +34,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/select_type_of_bar"
             android:visibility="visible"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:inputType="text">
     </EditText>
 
     <EditText
@@ -51,7 +52,8 @@
             app:layout_constraintTop_toBottomOf="@+id/select_bar_name"
             app:layout_constraintBottom_toTopOf="@+id/select_bar_location"
             android:visibility="visible"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:inputType="text">
     </EditText>
 
     <EditText
@@ -68,7 +70,8 @@
             app:layout_constraintTop_toBottomOf="@+id/select_type_of_bar"
             app:layout_constraintBottom_toTopOf="@+id/projected_date"
             android:visibility="visible"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:inputType="text">
     </EditText>
 
     <EditText
@@ -83,24 +86,38 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_bar_location"
-            app:layout_constraintBottom_toTopOf="@+id/button_update_bar_list"
+            app:layout_constraintBottom_toTopOf="@+id/search"
             android:visibility="visible"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:inputType="date">
     </EditText>
 
-    <Button
-            android:id="@+id/button_update_bar_list"
-            android:text="@string/update_search"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+    <ImageButton
+            android:id="@+id/search"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/search_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/clear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/projected_date"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/projected_date"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"/>
 
+    <ImageButton
+            android:id="@+id/clear"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:contentDescription="@string/clear_description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/search"
+            app:layout_constraintTop_toBottomOf="@+id/projected_date"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ import java.util.List;
 public interface HappyHourService {
 
     @GET("happyhour/search")
-    Observable<List<HappyHour>> search(@Query("q") String fragment);
+    Observable<List<HappyHour>> searchBarsForHappyHour(@Query("q") String fragment);
 
     static HappyHourService getInstance() {
         return HappyHourService.InstanceHolder.INSTANCE;

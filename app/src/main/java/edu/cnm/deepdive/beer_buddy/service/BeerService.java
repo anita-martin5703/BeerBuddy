@@ -16,7 +16,7 @@ import java.util.List;
 public interface BeerService {
 
     @GET("beer/search")
-    Observable<List<Beer>> search(@Query("q") String fragment);
+    Observable<List<Beer>> getBeer(@Query("q") String fragment);
 
     static BeerService getInstance() {
         return InstanceHolder.INSTANCE;

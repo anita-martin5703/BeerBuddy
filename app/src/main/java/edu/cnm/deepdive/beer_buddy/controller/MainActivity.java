@@ -4,37 +4,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.lifecycle.LifecycleObserver;
+import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.LoginActivity;
 import edu.cnm.deepdive.beer_buddy.R;
-import edu.cnm.deepdive.beer_buddy.model.database.BarDatabase;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BarFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.HappyHourFragment;
-import edu.cnm.deepdive.beer_buddy.service.BarService;
+import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
-import retrofit2.Call;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-//    private static Retrofit retrofit = null;
-//    private RecyclerView recyclerView = null;
-//
-//    BarService barService = retrofit.create(BarService.class);
-//
-//    Call<Bar> call = (Call<Bar>) barService.search("q");
-//
-//    public void onResponse(Call<BarService> call, Response<BarService> response) {
-//        List<Bar> bars = (List<Bar>) BarService.getInstance();
-//    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -15,7 +15,7 @@ import java.util.List;
 
 public interface BarService {
     @GET("bar/search")
-    Observable<List<Bar>> search(@Query("q") String fragment);
+    Observable<List<Bar>> getBars(@Query("q") String fragment);
 
     static BarService getInstance() {
         return BarService.InstanceHolder.INSTANCE;
