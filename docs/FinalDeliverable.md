@@ -2,7 +2,8 @@
 
 ## License
 Copyright 2019 Anita Martin. All rights reserved.
-Please [click](License.md) here for license information.
+
+No license obtain so no information provided.
 
 ## DDL for Data Model
 
@@ -61,13 +62,14 @@ Here is the list of things I would like to accomplish for it to work properly:
 3. Add in a personal logo.
 
 ## Up to date Wireframes and User Stories
-Click on [WireFrames]() for current wireframes. 
+Up to date [Wireframe-3](WireFrame-3.png)
 
-Click on [User Stories](user-stories.md) for stories.
+Click [here](WireFrame-3.pdf) for a PDF Version of Wireframe.
 
 ## Up to date ERD's
-Click on [ERD]() for current ERD's.
+Up to date [ERD-3](ERD3.png)
 
+Click [here](ERD-3.pdf) for a PDF Version.
 
 ## Instructions for building the App
 Click [here](BuildingTheApp.md) on instructions for the implementation of Beer Buddy.
