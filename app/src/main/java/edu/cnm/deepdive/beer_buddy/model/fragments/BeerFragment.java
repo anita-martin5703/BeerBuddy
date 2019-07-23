@@ -1,11 +1,10 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.model.fragments;
 
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.text.TextUtils;
 import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,18 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
-import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
-import edu.cnm.deepdive.beer_buddy.service.BeerService;
-
-import java.util.List;
 
 public class BeerFragment extends Fragment {
 
@@ -43,7 +35,7 @@ public class BeerFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupBeerSearch();
         setupBeerViewModel();
@@ -66,10 +58,10 @@ public class BeerFragment extends Fragment {
         searchButton = searchButton.findViewById(R.id.search_beer_button);
         clearButton = clearButton.findViewById(R.id.clear_beer_button);
         searchResultsBeer = searchResultsBeer.findViewById(R.id.list_of_beers);
-        searchButton.setOnClickListener((v -> beerViewModel.getmAllBeers(selectBeer.getText().toString().trim())));
+        searchButton.setOnClickListener((v -> beerViewModel.getAllBeers(selectBeer.getText().toString().trim())));
         clearButton.setOnClickListener((v -> {
             selectBeer.getText().clear();
-            beerViewModel.getmAllBeers(null);
+            beerViewModel.getAllBeers(null);
         }));
         searchResultsBeer.setOnItemClickListener((adapterView, view1, position, rowId) -> {
             Beer beer = (Beer) adapterView.getItemAtPosition(position);
@@ -88,10 +80,10 @@ public class BeerFragment extends Fragment {
     private void setupBeerViewModel() {
         beerViewModel = ViewModelProviders.of(this).get(BeerViewModel.class);
         getLifecycle().addObserver((LifecycleObserver) beerViewModel);
-        beerViewModel.getmAllBeers(null).observe(this, (bars -> {
-            ArrayAdapter<Bar> adapter = new ArrayAdapter<>(this, R.layout.fragment_bar, bars);
+        beerViewModel.getAllBeers("").observe(this, (beers) -> {
+            ArrayAdapter<Beer> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, beers);
             searchResultsBeer.setAdapter(adapter);
-        }));
+        });
     }
 
 }

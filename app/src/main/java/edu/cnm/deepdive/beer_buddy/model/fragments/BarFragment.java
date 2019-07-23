@@ -1,3 +1,6 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.model.fragments;
 
 import android.os.Bundle;
@@ -31,7 +34,7 @@ public class BarFragment extends Fragment {
     }
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setupBarViewModel();
         setupBarSearch();
@@ -54,10 +57,10 @@ public class BarFragment extends Fragment {
         updateSearch = updateSearch.findViewById(R.id.search);
         clear = clear.findViewById(R.id.clear);
         searchResultsBar = searchResultsBar.findViewById(R.id.list_of_bars);
-        updateSearch.setOnClickListener((v -> barViewModel.getmAllBars(barName.getText().toString().trim())));
+        updateSearch.setOnClickListener((v -> barViewModel.getAllBars(barName.getText().toString().trim())));
         clear.setOnClickListener((v -> {
             barName.getText().clear();
-            barViewModel.getmAllBars(null);
+            barViewModel.getAllBars(null);
         }));
         searchResultsBar.setOnItemClickListener((adapterView, view1, position, rowId) -> {
             Bar bar = (Bar) adapterView.getItemAtPosition(position);
@@ -76,11 +79,9 @@ public class BarFragment extends Fragment {
     private void setupBarViewModel() {
         barViewModel = ViewModelProviders.of(this).get(BarViewModel.class);
         getLifecycle().addObserver((LifecycleObserver) barViewModel);
-        barViewModel.getmAllBars(null).observe(this, (bars -> {
-            ArrayAdapter<Bar> adapter = new ArrayAdapter<>(this, R.layout.fragment_bar, bars);
+        barViewModel.getAllBars("").observe(this, (bars) -> {
+            ArrayAdapter<Bar> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, bars);
             searchResultsBar.setAdapter(adapter);
-        }));
+        });
     }
-
-
 }

@@ -1,3 +1,6 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.service;
 
 import edu.cnm.deepdive.beer_buddy.BuildConfig;
@@ -16,7 +19,9 @@ import java.util.List;
 public interface HappyHourService {
 
     @GET("happyhour/search")
-    Observable<List<HappyHour>> searchBarsForHappyHour(@Query("q") String fragment);
+    Observable<List<HappyHour>> searchBarsForHappyHour(@Query("client_id") String clientId,
+                                                       @Query("client_secret") String clientSecret,
+                                                       @Query("q") String fragment);
 
     static HappyHourService getInstance() {
         return HappyHourService.InstanceHolder.INSTANCE;

@@ -1,3 +1,6 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.service;
 
 import edu.cnm.deepdive.beer_buddy.BuildConfig;
@@ -15,7 +18,9 @@ import java.util.List;
 
 public interface BarService {
     @GET("bar/search")
-    Observable<List<Bar>> getBars(@Query("q") String fragment);
+    Observable<List<Bar>> getBars(@Query("client_id") String clientId,
+                                  @Query("client_secret") String clientSecret,
+                                  @Query("q") String fragment);
 
     static BarService getInstance() {
         return BarService.InstanceHolder.INSTANCE;

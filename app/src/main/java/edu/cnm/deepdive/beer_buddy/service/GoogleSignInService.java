@@ -1,3 +1,6 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.service;
 
 import android.app.Application;

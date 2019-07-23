@@ -1,27 +1,23 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LifecycleObserver;
-import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.LoginActivity;
 import edu.cnm.deepdive.beer_buddy.R;
-import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BarFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.BeerFragment;
 import edu.cnm.deepdive.beer_buddy.model.fragments.HappyHourFragment;
-import edu.cnm.deepdive.beer_buddy.model.viewModel.BarViewModel;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
 
 public class MainActivity extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Loads different fragments (Bars, Beers, Happy Hour).
+     */
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
             getSupportFragmentManager()
@@ -46,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }
 
-    // This method is used to sign-out from Google.
+    /**
+     * Method for signing you out of Google.
+     */
     private void signOut() {
         GoogleSignInService service = GoogleSignInService.getInstance();
         service.getClient().signOut().addOnCompleteListener((task) -> {
@@ -57,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Navigation is used to navigate between main windows.
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem menuItem) {
         Fragment fragment = null;

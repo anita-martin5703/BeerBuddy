@@ -1,8 +1,12 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.model.viewModel;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.*;
+import edu.cnm.deepdive.beer_buddy.BuildConfig;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import edu.cnm.deepdive.beer_buddy.service.BeerService;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -22,19 +26,19 @@ public class BeerViewModel extends AndroidViewModel {
     super(application);
   }
 
-  public LiveData<List<Beer>> getmAllBeers(String term) {
+  public LiveData<List<Beer>> getAllBeers(String term) {
     if (mAllBeer == null) {
-      mAllBeer = new MutableLiveData<List<edu.cnm.deepdive.beer_buddy.model.entity.Beer>>();
+      mAllBeer = new MutableLiveData<>();
     }
     if (term != null) {
       pending.add(
-              BeerService.getInstance().getBeer(term)
+              BeerService.getInstance().getBeer(BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET, term)
                       .subscribeOn(Schedulers.io())
                       .observeOn(AndroidSchedulers.mainThread())
                       .subscribe((beers -> mAllBeer.setValue(beers))
                       ));
     } else {
-      mAllBeer.setValue(new LinkedList<edu.cnm.deepdive.beer_buddy.model.entity.Beer>());
+      mAllBeer.setValue(new LinkedList<>());
     }
     return mAllBeer;
   }

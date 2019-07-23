@@ -1,8 +1,12 @@
+/**
+ * Copyright 2019 Anita Martin. All rights reserved.
+ */
 package edu.cnm.deepdive.beer_buddy.model.viewModel;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.*;
+import edu.cnm.deepdive.beer_buddy.BuildConfig;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.HappyHour;
 import edu.cnm.deepdive.beer_buddy.service.HappyHourService;
@@ -28,7 +32,7 @@ public class HappyHourViewModel extends AndroidViewModel {
         }
         if (term != null) {
             pending.add(
-                    HappyHourService.getInstance().searchBarsForHappyHour(term)
+                    HappyHourService.getInstance().searchBarsForHappyHour(BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET,term)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe((happyHours -> happyHourBars.setValue(happyHours))
