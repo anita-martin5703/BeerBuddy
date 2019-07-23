@@ -15,14 +15,14 @@ public class BarSearchResponse {
     private Response response;
 
     /**
-     * Returns the response of the hierarchical item.
+     * @return returns the response of the hierarchical item.
      */
     public Response getResponse() {
         return response;
     }
 
     /**
-     * Sets the response of the hierarchical item.
+     * @param response sets the response of the hierarchical item.
      */
     public void setResponse(Response response) {
         this.response = response;
@@ -36,14 +36,14 @@ public class BarSearchResponse {
         private Brewery brewery;
 
         /**
-         * Returns the brewery of the hierarchical item.
+         * @return returns the brewery of the hierarchical item.
          */
         public Brewery getBrewery() {
             return brewery;
         }
 
         /**
-         * Sets the brewery of the hierarchical item.
+         * @param brewery sets the brewery of the hierarchical item.
          */
         public void setBrewery(Brewery brewery) {
             this.brewery = brewery;
@@ -58,14 +58,14 @@ public class BarSearchResponse {
         private List<Item> items;
 
         /**
-         * Returns the items of the hierarchical item.
+         * @return returns the items of the hierarchical item.
          */
         public List<Item> getItems() {
             return items;
         }
 
         /**
-         * Sets the items of the hierarchical item.
+         * @param items sets the items of the hierarchical item.
          */
         public void setItems(List<Item> items) {
             this.items = items;
@@ -81,14 +81,14 @@ public class BarSearchResponse {
         private Bar brewery;
 
         /**
-         * Returns the brewery of the hierarchical item.
+         * @return returns the brewery of the hierarchical item.
          */
         public Bar getBrewery() {
             return brewery;
         }
 
         /**
-         * Sets the brewery of the hierarchical item.
+         * @param brewery sets the brewery of the hierarchical item.
          */
         public void setBrewery(Bar brewery) {
             this.brewery = brewery;

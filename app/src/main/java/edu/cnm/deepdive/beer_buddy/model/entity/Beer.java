@@ -41,98 +41,98 @@ public class Beer implements Serializable {
     private String style;
 
     /**
-     * Returns the Id of this instance.
+     * @return Returns the Id of this instance.
      */
     public Long getId() {
         return id;
     }
 
     /**
-     * Sets the Id of this instance.
+     * @param id sets the Id of this instance.
      */
     public void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * Returns the beerId of this instance.
+     * @return returns the beerId of this instance.
      */
     public Long getBeerId() {
         return beerId;
     }
 
     /**
-     * Sets the beerId of this instance.
+     * @param beerId sets the beerId of this instance.
      */
     public void setBeerId(Long beerId) {
         this.beerId = beerId;
     }
 
     /**
-     * Returns the name of this instance.
+     * @return returns the name of this instance.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets the name of this instance.
+     * @param name sets the name of this instance.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Returns the breweryHouse of this instance.
+     * @return returns the breweryHouse of this instance.
      */
     public String getBreweryHouse() {
         return breweryHouse;
     }
 
     /**
-     * Sets the breweryHouse of this instance.
+     * @param breweryHouse sets the breweryHouse of this instance.
      */
     public void setBreweryHouse(String breweryHouse) {
         this.breweryHouse = breweryHouse;
     }
 
     /**
-     * Returns the beerAbv of this instance.
+     * @return returns the beerAbv of this instance.
      */
     public int getBeerAbv() {
         return beerAbv;
     }
 
     /**
-     * Sets the beerABv of this instance.
+     * @param beerAbv sets the beerABv of this instance.
      */
     public void setBeerAbv(int beerAbv) {
         this.beerAbv = beerAbv;
     }
 
     /**
-     * Returns the description of this instance.
+     * @return Returns the description of this instance.
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     * Sets the description of this instance.
+     * @param description sets the description of this instance.
      */
     public void setDescription(String description) {
         this.description = description;
     }
 
     /**
-     * Returns the style of this instance.
+     * @return returns the style of this instance.
      */
     public String getStyle() {
         return style;
     }
 
     /**
-     * Sets the style of this instance.
+     * @param style sets the style of this instance.
      */
     public void setStyle(String style) {
         this.style = style;

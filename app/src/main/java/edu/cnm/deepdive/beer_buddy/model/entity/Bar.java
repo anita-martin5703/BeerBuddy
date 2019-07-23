@@ -31,7 +31,7 @@ public class Bar {
     private String projectedDate;
 
     /**
-     * Returns the Id of this instance.
+     * @return Returns the Id of this instance.
      */
     public long getId() {
         return id;
@@ -39,13 +39,14 @@ public class Bar {
 
     /**
      * Sets the Id of this instance.
+     * @param id creates an id of Bars
      */
     public void setId(long id) {
         this.id = id;
     }
 
     /**
-     * Returns the barId of this instance.
+     * @return Returns the barId of this instance.
      */
     public long getBarId() {
         return barId;
@@ -53,62 +54,63 @@ public class Bar {
 
     /**
      * Sets the barId of this instance.
+     * @param barId sets up the bar Id for retrieving bars
      */
     public void setBarId(long barId) {
         this.barId = barId;
     }
 
     /**
-     * Returns the name of this instance.
+     * @return Returns the name of this instance.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets the name of this instance.
+     * @param name sets the name of this instance.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Returns the type of this instance.
+     * @return Returns the type of this instance.
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Sets the type of this instance.
+     * @param type sets the type of this instance.
      */
     public void setType(String type) {
         this.type = type;
     }
 
     /**
-     * Returns the location of this instance.
+     * @return Returns the location of this instance.
      */
     public String getLocation() {
         return location;
     }
 
     /**
-     * Sets the location of this instance.
+     * @param location sets the location of this instance.
      */
     public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * Returns the projected date of this instance.
+     * @return Returns the projected date of this instance.
      */
     public String getProjectedDate() {
         return projectedDate;
     }
 
     /**
-     * Sets the projected date of this instance.
+     * @param projectedDate sets the projected date of this instance.
      */
     public void setProjectedDate(String projectedDate) {
         this.projectedDate = projectedDate;

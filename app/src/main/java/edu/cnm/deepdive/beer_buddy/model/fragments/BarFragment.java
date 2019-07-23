@@ -34,6 +34,7 @@ public class BarFragment extends Fragment {
     private EditText barProjectedDate;
     private ImageButton updateSearch;
     private ImageButton clear;
+
     /**
      * Required empty constructor
      */
@@ -58,9 +59,7 @@ public class BarFragment extends Fragment {
         setupBarSearch(barInfoView);
         return barInfoView;
     }
-    /**
-     * Sets up the search results according to the user input in a List View.
-     */
+
     private void setupBarSearch(View view) {
         barName = view.findViewById(R.id.select_bar_name);
         barType = view.findViewById(R.id.select_type_of_bar);
@@ -88,9 +87,6 @@ public class BarFragment extends Fragment {
         });
     }
 
-    /**
-     * Sets up the View Model output into a generic layout.
-     */
     private void setupBarViewModel() {
         barViewModel = ViewModelProviders.of(this).get(BarViewModel.class);
         getLifecycle().addObserver(barViewModel);

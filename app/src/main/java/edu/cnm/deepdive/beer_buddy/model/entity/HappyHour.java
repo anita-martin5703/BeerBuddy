@@ -35,70 +35,70 @@ public class HappyHour {
     private String weekdays;
 
     /**
-     * Returns the Id of this instance.
+     * @return returns the Id of this instance.
      */
     public long getId() {
         return id;
     }
 
     /**
-     * Sets the Id of this instance.
+     * @param id sets the Id of this instance.
      */
     public void setId(long id) {
         this.id = id;
     }
 
     /**
-     * Returns the barId of this instance.
+     * @return returns the barId of this instance.
      */
     public long getBarId() {
         return barId;
     }
 
     /**
-     * Sets the barId of this instance.
+     * @param barId sets the barId of this instance.
      */
     public void setBarId(long barId) {
         this.barId = barId;
     }
 
     /**
-     * Returns the name of this instance.
+     * @return returns the name of this instance.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets the name of this instance.
+     * @param name sets the name of this instance.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Returns the hours of this instance.
+     * @return returns the hours of this instance.
      */
     public String getHours() {
         return hours;
     }
 
     /**
-     * Sets the hours of this instance.
+     * @param hours sets the hours of this instance.
      */
     public void setHours(String hours) {
         this.hours = hours;
     }
 
     /**
-     * Returns the weekdays of this instance.
+     * @return returns the weekdays of this instance.
      */
     public String getWeekdays() {
         return weekdays;
     }
 
     /**
-     * Sets the weekdays of this instance.
+     * @param weekdays sets the weekdays of this instance.
      */
     public void setWeekdays(String weekdays) {
         this.weekdays = weekdays;

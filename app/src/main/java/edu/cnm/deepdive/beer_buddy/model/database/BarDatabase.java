@@ -35,6 +35,8 @@ public abstract class BarDatabase extends RoomDatabase {
 
     /**
      * Method returns the built database.
+     * @param context sets context context
+     * @return returns the Instance of Context
      */
     public static BarDatabase getInstance(Context context) {
         if (INSTANCE == null) {

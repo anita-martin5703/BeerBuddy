@@ -5,19 +5,21 @@ package edu.cnm.deepdive.beer_buddy.model.fragments;
 
 
 import android.os.Bundle;
-import android.widget.*;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.lifecycle.LifecycleObserver;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 import edu.cnm.deepdive.beer_buddy.R;
-import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
+
 /**
  * Beer Fragment Class encapsulates the information to set up views to send to the viewModel.
  */
@@ -57,11 +59,9 @@ public class BeerFragment extends Fragment {
         setupBeerSearch(beerInfoView);
         return beerInfoView;
     }
-    /**
-     * Sets up the search results according to the user input in a List View.
-     */
+
     private void setupBeerSearch(View view) {
-        selectBeer= view.findViewById(R.id.select_beer_name);
+        selectBeer = view.findViewById(R.id.select_beer_name);
         selectBrewery = view.findViewById(R.id.select_brewery);
         selectBeerAbv = view.findViewById(R.id.select_beer_abv);
         selectBeerStyle = view.findViewById(R.id.select_beer_style);
@@ -86,9 +86,7 @@ public class BeerFragment extends Fragment {
             };
         });
     }
-    /**
-     * Sets up the View Model output into a generic layout.
-     */
+
     private void setupBeerViewModel() {
         beerViewModel = ViewModelProviders.of(this).get(BeerViewModel.class);
         getLifecycle().addObserver(beerViewModel);

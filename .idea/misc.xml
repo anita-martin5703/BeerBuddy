@@ -6,7 +6,7 @@
     <option name="OPTION_DOCUMENT_TAG_USE" value="true" />
     <option name="OPTION_DOCUMENT_TAG_AUTHOR" value="true" />
     <option name="OPTION_DOCUMENT_TAG_VERSION" value="true" />
-    <option name="OTHER_OPTIONS" value="-bootclasspath &quot;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar&quot;;C:\android\sdk\platforms\android-21\android.jar -link https://docs.oracle.com/javase/8/docs/api/ -linkoffline https://developer.android.com/reference/ &quot;C:\Users\anita\Desktop\bootcamp\projects\BeerBuddy&quot; -link https://square.github.io/retrofit/2.x/retrofit/ -link https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5 -windowtitle &quot;Beer Buddy&quot;" />
+    <option name="OTHER_OPTIONS" value="-bootclasspath &quot;C:\Program Files\Java\jdk1.8.0_211\jre\lib\rt.jar&quot;;C:\android\sdk\platforms\android-21\android.jar -link https://docs.oracle.com/javase/8/docs/api/ -linkoffline https://developer.android.com/reference/ &quot;C:\Users\anita\Desktop\bootcamp\projects\BeerBuddy\&quot; -link https://square.github.io/retrofit/2.x/retrofit/ -link https://www.javadoc.io/doc/com.google.code.gson/gson/2.8.5 -windowtitle &quot;Beer Buddy&quot;" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

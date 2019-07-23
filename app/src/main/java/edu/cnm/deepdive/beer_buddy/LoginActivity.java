@@ -4,10 +4,10 @@
 package edu.cnm.deepdive.beer_buddy;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.Task;
 import edu.cnm.deepdive.beer_buddy.controller.MainActivity;
 import edu.cnm.deepdive.beer_buddy.service.GoogleSignInService;
 
+/**
+ * Class to set up Google Sign-in
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private static final int LOGIN_REQUEST_CODE = 1000;
@@ -24,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         findViewById(R.id.sign_in).setOnClickListener((view) -> signIn());
-   }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -55,6 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = GoogleSignInService.getInstance().getClient().getSignInIntent();
         startActivityForResult(intent, LOGIN_REQUEST_CODE);
     }
+
     private void switchToMain() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

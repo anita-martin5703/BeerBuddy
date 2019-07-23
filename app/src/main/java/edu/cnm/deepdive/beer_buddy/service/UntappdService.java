@@ -4,11 +4,8 @@
 package edu.cnm.deepdive.beer_buddy.service;
 
 import edu.cnm.deepdive.beer_buddy.BuildConfig;
-import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
-import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import edu.cnm.deepdive.beer_buddy.model.pojo.BarSearchResponse;
 import edu.cnm.deepdive.beer_buddy.model.pojo.BeerSearchResponse;
-import io.reactivex.Observable;
 import io.reactivex.Single;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -18,9 +15,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
-import java.util.List;
-
+/**
+ * Sets context, context for Google Sign-in
+ */
 public interface UntappdService {
+
+    static UntappdService getInstance() {
+        return UntappdService.InstanceHolder.INSTANCE;
+    }
 
     @GET("search/brewery")
     Single<BarSearchResponse> getBars(@Query("client_id") String clientId,
@@ -32,10 +34,9 @@ public interface UntappdService {
                                        @Query("client_secret") String clientSecret,
                                        @Query("q") String fragment);
 
-    static UntappdService getInstance() {
-        return UntappdService.InstanceHolder.INSTANCE;
-    }
-
+    /**
+     * Sets up HTTP Interceptor to call on API.
+     */
     class InstanceHolder {
 
         private static final UntappdService INSTANCE;

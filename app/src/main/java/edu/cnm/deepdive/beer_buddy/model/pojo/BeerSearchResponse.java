@@ -15,14 +15,14 @@ public class BeerSearchResponse {
     private Response response;
 
     /**
-     * Returns the response of the hierarchical item.
+     * @return returns the response of the hierarchical item.
      */
     public Response getResponse() {
         return response;
     }
 
     /**
-     * Sets the response of the hierarchical item.
+     * @param response sets the response of the hierarchical item.
      */
     public void setResponse(Response response) {
         this.response = response;
@@ -36,14 +36,14 @@ public class BeerSearchResponse {
         private Beers beers;
 
         /**
-         * Returns the beers of the hierarchical item.
+         * @return returns the beers of the hierarchical item.
          */
         public Beers getBeers() {
             return beers;
         }
 
         /**
-         * Sets the beers of the hierarchical item.
+         * @param beers sets the beers of the hierarchical item.
          */
         public void setBeers(Beers beers) {
             this.beers = beers;
@@ -58,14 +58,14 @@ public class BeerSearchResponse {
         private List<Beer> items;
 
         /**
-         * Returns the response of the hierarchical item.
+         * @return returns the response of the hierarchical item.
          */
         public List<Beer> getItems() {
             return items;
         }
 
         /**
-         * Sets the response of the hierarchical item.
+         * @param items sets the response of the hierarchical item.
          */
         public void setItems(List<Beer> items) {
             this.items = items;

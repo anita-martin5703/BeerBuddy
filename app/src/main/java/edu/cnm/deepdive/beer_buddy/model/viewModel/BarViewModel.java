@@ -17,15 +17,27 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * BarViewModel models the domain of our database by calling on our API via HTTP.
+ */
 public class BarViewModel extends AndroidViewModel implements LifecycleObserver {
 
     private MutableLiveData<List<Bar>> mAllBars;
     private CompositeDisposable pending = new CompositeDisposable();
 
+    /**
+     * BarViewModel returns a super.
+     * @param application super created.
+     */
     public BarViewModel(@NonNull Application application) {
         super(application);
     }
 
+    /**
+     * LiveData is used to display LiveData of Bars
+     * @param term inputs the query of the String searching
+     * @return returns Live Data of Bars
+     */
     public LiveData<List<Bar>> getAllBars(String term) {
         if (mAllBars == null) {
             mAllBars = new MutableLiveData<>();

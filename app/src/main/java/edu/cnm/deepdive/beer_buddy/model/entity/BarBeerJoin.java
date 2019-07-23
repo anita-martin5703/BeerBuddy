@@ -34,28 +34,28 @@ public class BarBeerJoin {
     private long barId;
 
     /**
-     * Returns the Id of this instance.
+     * @return Returns the Id of this instance.
      */
     public long getBeerId() {
         return beerId;
     }
 
     /**
-     * Sets the Id of this instance.
+     * @param beerId sets the Id of this instance.
      */
     public void setBeerId(long beerId) {
         this.beerId = beerId;
     }
 
     /**
-     * Returns the BarId of this instance.
+     * @return Returns the BarId of this instance.
      */
     public long getBarId() {
         return barId;
     }
 
     /**
-     * Sets the BarId of this instance.
+     * @param barId sets the BarId of this instance.
      */
     public void setBarId(long barId) {
         this.barId = barId;

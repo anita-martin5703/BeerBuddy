@@ -6,14 +6,20 @@ package edu.cnm.deepdive.beer_buddy.model.util;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+
 /**
  * Live Data Test Class that tests the output of our data.
  */
 public class LiveDataTestUtil {
     /**
-     * Method that test
+     * Method that test our database
+     * @param <T> generic testing input
+     * @param liveData sets the Live Data
+     * @return returns the Live Data based on T
+     * @throws InterruptedException exception
      */
     public static <T> T getValue(LiveData<T> liveData) throws InterruptedException {
         final Object[] data = new Object[1];

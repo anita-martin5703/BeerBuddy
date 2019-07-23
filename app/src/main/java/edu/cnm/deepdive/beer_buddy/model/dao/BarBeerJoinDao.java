@@ -13,10 +13,7 @@ import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import java.util.List;
 
 /**
- * Returns the {@link edu.cnm.deepdive.beer_buddy.model.entity.Bar} specified by <code>barId</code> from the database.
- *
- * barId {@link edu.cnm.deepdive.beer_buddy.model.entity.Bar} primary key value.
- * @return {@link LiveData LiveData&lt;Beer&gt;} instance.
+ * barId Bar primary key value.
  */
 
 @Dao

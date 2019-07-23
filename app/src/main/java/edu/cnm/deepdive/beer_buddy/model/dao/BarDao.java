@@ -12,10 +12,7 @@ import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import java.util.List;
 
 /**
- * Returns the {@link Bar} specified by <code>movieId</code> from the database.
- *
- * @param :id {@link Bar} primary key value.
- * @return {@link LiveData LiveData&lt;Bar&gt;} instance.
+ * Returns the Bar specified by <code>Bar</code> from the database.
  */
 
 @Dao

@@ -17,15 +17,22 @@ import androidx.fragment.app.Fragment;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.HappyHour;
 
+/**
+ * HappyHour Fragment Class encapsulates the information to set up views to send to the viewModel.
+ */
 public class HappyHourFragment extends Fragment {
-
+    /**
+     * Fields to be used in the this HappyHour Fragment
+     */
     private EditText selectBar;
     private EditText inputHours;
     private EditText inputWeekdays;
     private Button addHours;
 
+    /**
+     * Required empty constructor
+     */
     public HappyHourFragment() {
-        //Required empty constructor
     }
 
     @Override

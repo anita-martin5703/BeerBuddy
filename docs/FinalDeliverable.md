@@ -11,6 +11,8 @@ Please [click](/docs/License.md) here for license information.
 ## Java Documentation
 
 * [Java Docs](/docs/api/overview-summary.html)
+* Raw information:
+    file:///C:/Users/anita/Desktop/bootcamp/projects/BeerBuddy/docs/api/overview-summary.html
 
 ## Description of Current Sate of App
 The app Beer Buddy is not complete and still has a lot of work left to do on it. 69 Warnings

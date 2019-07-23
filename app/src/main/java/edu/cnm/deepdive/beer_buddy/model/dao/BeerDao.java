@@ -12,11 +12,8 @@ import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import java.util.List;
 
 /**
- * Returns the {@link Beer} specified by <code>movieId</code> from the database.
- *
- * @param :id {@link Beer} primary key value.
- * @return {@link LiveData LiveData&lt;Beer&gt;} instance.
- */
+ * Returns the Beer specified by beer from the database.
+ * */
 
 @Dao
 public interface BeerDao {

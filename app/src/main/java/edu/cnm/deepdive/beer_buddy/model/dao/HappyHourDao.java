@@ -13,10 +13,8 @@ import edu.cnm.deepdive.beer_buddy.model.entity.HappyHour;
 import java.util.List;
 
 /**
- * Returns the {@link HappyHour} specified by <code>movieId</code> from the database.
- *
- * @param :id {@link HappyHour} primary key value.
- * @return {@link LiveData LiveData&lt;Movie&gt;} instance.
+ * Returns the Happy Hour specified by bar from the database.
+
  */
 
 @Dao
