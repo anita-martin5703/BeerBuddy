@@ -1,0 +1,10 @@
+edu.cnm.deepdive.beer_buddy
+edu.cnm.deepdive.beer_buddy.controller
+edu.cnm.deepdive.beer_buddy.model.dao
+edu.cnm.deepdive.beer_buddy.model.database
+edu.cnm.deepdive.beer_buddy.model.entity
+edu.cnm.deepdive.beer_buddy.model.fragments
+edu.cnm.deepdive.beer_buddy.model.pojo
+edu.cnm.deepdive.beer_buddy.model.util
+edu.cnm.deepdive.beer_buddy.model.viewModel
+edu.cnm.deepdive.beer_buddy.service

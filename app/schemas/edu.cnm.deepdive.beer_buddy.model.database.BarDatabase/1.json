@@ -1,0 +1,231 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "58ea690f48518e357a1b3cb779a09bdf",
+    "entities": [
+      {
+        "tableName": "Bar",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `bar_id` INTEGER NOT NULL, `name` TEXT NOT NULL, `type` TEXT, `projected_date` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barId",
+            "columnName": "bar_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "projectedDate",
+            "columnName": "projected_date",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Bar_bar_id",
+            "unique": false,
+            "columnNames": [
+              "bar_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Bar_bar_id` ON `${TABLE_NAME}` (`bar_id`)"
+          },
+          {
+            "name": "index_Bar_projected_date",
+            "unique": false,
+            "columnNames": [
+              "projected_date"
+            ],
+            "createSql": "CREATE  INDEX `index_Bar_projected_date` ON `${TABLE_NAME}` (`projected_date`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Beer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `beer_id` INTEGER, `name` TEXT, `brewery_house` TEXT, `beer_Abv` INTEGER NOT NULL, `description` TEXT, `style` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "beerId",
+            "columnName": "beer_id",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "breweryHouse",
+            "columnName": "brewery_house",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "beerAbv",
+            "columnName": "beer_Abv",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "style",
+            "columnName": "style",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [
+          {
+            "name": "index_Beer_name",
+            "unique": true,
+            "columnNames": [
+              "name"
+            ],
+            "createSql": "CREATE UNIQUE INDEX `index_Beer_name` ON `${TABLE_NAME}` (`name`)"
+          },
+          {
+            "name": "index_Beer_beer_id",
+            "unique": false,
+            "columnNames": [
+              "beer_id"
+            ],
+            "createSql": "CREATE  INDEX `index_Beer_beer_id` ON `${TABLE_NAME}` (`beer_id`)"
+          },
+          {
+            "name": "index_Beer_brewery_house",
+            "unique": false,
+            "columnNames": [
+              "brewery_house"
+            ],
+            "createSql": "CREATE  INDEX `index_Beer_brewery_house` ON `${TABLE_NAME}` (`brewery_house`)"
+          },
+          {
+            "name": "index_Beer_beer_Abv",
+            "unique": false,
+            "columnNames": [
+              "beer_Abv"
+            ],
+            "createSql": "CREATE  INDEX `index_Beer_beer_Abv` ON `${TABLE_NAME}` (`beer_Abv`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "BarBeerJoin",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`beer_id` INTEGER NOT NULL, `bar_id` INTEGER NOT NULL, PRIMARY KEY(`beer_id`, `bar_id`), FOREIGN KEY(`beer_id`) REFERENCES `Beer`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION , FOREIGN KEY(`bar_id`) REFERENCES `Bar`(`id`) ON UPDATE NO ACTION ON DELETE NO ACTION )",
+        "fields": [
+          {
+            "fieldPath": "beerId",
+            "columnName": "beer_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "barId",
+            "columnName": "bar_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "beer_id",
+            "bar_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_BarBeerJoin_beer_id",
+            "unique": false,
+            "columnNames": [
+              "beer_id"
+            ],
+            "createSql": "CREATE  INDEX `index_BarBeerJoin_beer_id` ON `${TABLE_NAME}` (`beer_id`)"
+          },
+          {
+            "name": "index_BarBeerJoin_bar_id",
+            "unique": false,
+            "columnNames": [
+              "bar_id"
+            ],
+            "createSql": "CREATE  INDEX `index_BarBeerJoin_bar_id` ON `${TABLE_NAME}` (`bar_id`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "Beer",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "beer_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          },
+          {
+            "table": "Bar",
+            "onDelete": "NO ACTION",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "bar_id"
+            ],
+            "referencedColumns": [
+              "id"
+            ]
+          }
+        ]
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '58ea690f48518e357a1b3cb779a09bdf')"
+    ]
+  }
+}
