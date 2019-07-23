@@ -2,15 +2,15 @@
 
 ## License
 Copyright 2019 Anita Martin. All rights reserved.
-Please [click](docs/License.md) here for license information.
+Please [click](/docs/License.md) here for license information.
 
 ## DDL for Data Model
 
-* [Data Model](docs/data-model.md)
+* [Data Model](/docs/data-model.md)
 
 ## Java Documentation
 
-* [Java Docs](docs/api/overview-summary.html)
+* [Java Docs](/docs/api/overview-summary.html)
 
 ## Description of Current Sate of App
 The app Beer Buddy is not complete and still has a lot of work left to do on it. 69 Warnings
@@ -23,7 +23,7 @@ information but it does nothing yet, the list view does not display anything yet
     1. Get rid of the Errors and as much warnings as possible.
     2. Incorporate the API (Untappd) that I have to fill my database.
     3. Get buttons to work properly in all the Fragments(updating, clearing, add buttons)
-    4. Bugs/errors that pop up are the following in this [list](docs/List-of-Errors.md).
+    4. Bugs/errors that pop up are the following in this [list](/docs/List-of-Errors.md).
     
 ## Android API Versions and Emulator
   - API Version: 
@@ -58,11 +58,20 @@ Here is the list of things I would like to accomplish for it to work properly:
 2. Add in self-made icons and spruce it up to make it more presentable.
 3. Add in a personal logo.
 
+## Up to date Wireframes and User Stories
+Click on [WireFrames]() for current wireframes. 
+
+Click on [User Stories](/docs/user-stories.md) for stories.
+
+## Up to date ERD's
+Click on [ERD]() for current ERD's.
+
+
 ## Instructions for building the App
-Click [here](docs/BuildingTheApp.md) on instructions for the implementation of Beer Buddy.
+Click [here](/docs/BuildingTheApp.md) on instructions for the implementation of Beer Buddy.
 
 
 ## Instructions for using the App
-Click [here](docs/InstructionsForBeerBuddy.md) on using Beer Buddy.
+Click [here](/docs/InstructionsForBeerBuddy.md) on using Beer Buddy.
 
 
