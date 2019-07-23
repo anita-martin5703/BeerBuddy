@@ -26,6 +26,7 @@ public class BeerViewModel extends AndroidViewModel implements LifecycleObserver
 
     /**
      * BeerViewModel returns a super
+     *
      * @param application super created
      */
     public BeerViewModel(@NonNull Application application) {
@@ -34,6 +35,7 @@ public class BeerViewModel extends AndroidViewModel implements LifecycleObserver
 
     /**
      * LiveData is used to display LiveData of Beers
+     *
      * @param term inputs the query of the String searching
      * @return returns the Live Data of Beers
      */

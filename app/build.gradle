@@ -16,11 +16,11 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BASE_URL", '"https://api.untappd.com/v4/"'
-        buildConfigField "String", "CLIENT_SECRET", getServicesProperty("client_secret") 
+        buildConfigField "String", "CLIENT_SECRET", getServicesProperty("client_secret")
         buildConfigField "String", "CLIENT_ID", getServicesProperty("client_id")
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
     }

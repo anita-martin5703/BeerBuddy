@@ -21,6 +21,6 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:defaultNavHost="true"
 
-/>
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

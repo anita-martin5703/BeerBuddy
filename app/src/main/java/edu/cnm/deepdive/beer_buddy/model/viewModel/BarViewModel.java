@@ -27,6 +27,7 @@ public class BarViewModel extends AndroidViewModel implements LifecycleObserver 
 
     /**
      * BarViewModel returns a super.
+     *
      * @param application super created.
      */
     public BarViewModel(@NonNull Application application) {
@@ -35,6 +36,7 @@ public class BarViewModel extends AndroidViewModel implements LifecycleObserver 
 
     /**
      * LiveData is used to display LiveData of Bars
+     *
      * @param term inputs the query of the String searching
      * @return returns Live Data of Bars
      */

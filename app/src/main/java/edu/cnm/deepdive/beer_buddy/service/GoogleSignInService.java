@@ -29,6 +29,7 @@ public class GoogleSignInService {
 
     /**
      * Sets context, context for Google Sign-in
+     *
      * @param context set Context, Context
      */
     public static void setContext(Application context) {
@@ -58,6 +59,7 @@ public class GoogleSignInService {
 
     /**
      * Sets account for Google Sign-in
+     *
      * @param account sets account according to sign-in
      */
     public void setAccount(GoogleSignInAccount account) {

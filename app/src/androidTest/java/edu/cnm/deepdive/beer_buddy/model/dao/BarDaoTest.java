@@ -20,12 +20,11 @@ import static org.junit.Assert.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class BarDaoTest {
 
-    @Rule
-    public TestRule rule = new InstantTaskExecutorRule();
-
     private static BarDatabase db;
     private static BarDao dao;
     private static long barId;
+    @Rule
+    public TestRule rule = new InstantTaskExecutorRule();
 
     @BeforeClass
     public static void setup() throws Exception {
@@ -34,6 +33,11 @@ public class BarDaoTest {
                 .allowMainThreadQueries()
                 .build();
         dao = db.getBarListingDao();
+    }
+
+    @AfterClass
+    public static void tearDown() throws Exception {
+        db.close();
     }
 
     @Test
@@ -47,22 +51,18 @@ public class BarDaoTest {
         assertTrue(barId > 0);
     }
 
-    @Test(expected = SQLiteConstraintException.class) // This should pass because we EXPECTED it to fail (Test passed means fail)
+    @Test(expected = SQLiteConstraintException.class)
+    // This should pass because we EXPECTED it to fail (Test passed means fail)
     public void insertNullBar() {
         Bar bar = new Bar("", "", "", "");
         long id = dao.insert(bar);
         fail("This shouldn't get here!");
     }
 
-
     @Test
     public void postInsertFindById() throws InterruptedException {
         Bar bar = LiveDataTestUtil.getValue(dao.findById(barId));
         assertNotNull(bar);
         assertEquals("Marble", bar.getName());
-    }
-    @AfterClass
-    public static void tearDown() throws Exception {
-        db.close();
     }
 }

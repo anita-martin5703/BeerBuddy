@@ -39,6 +39,7 @@ public class Bar {
 
     /**
      * Sets the Id of this instance.
+     *
      * @param id creates an id of Bars
      */
     public void setId(long id) {
@@ -54,6 +55,7 @@ public class Bar {
 
     /**
      * Sets the barId of this instance.
+     *
      * @param barId sets up the bar Id for retrieving bars
      */
     public void setBarId(long barId) {

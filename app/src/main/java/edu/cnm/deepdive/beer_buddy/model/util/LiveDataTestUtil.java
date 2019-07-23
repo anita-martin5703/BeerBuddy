@@ -16,7 +16,8 @@ import java.util.concurrent.TimeUnit;
 public class LiveDataTestUtil {
     /**
      * Method that test our database
-     * @param <T> generic testing input
+     *
+     * @param <T>      generic testing input
      * @param liveData sets the Live Data
      * @return returns the Live Data based on T
      * @throws InterruptedException exception

@@ -16,15 +16,18 @@ No license obtain so no information provided.
     file:///C:/Users/anita/Desktop/bootcamp/projects/BeerBuddy/docs/api/overview-summary.html
 
 ## Description of Current Sate of App
-The app Beer Buddy is not complete and still has a lot of work left to do on it. 69 Warnings
-and 1 weak warning are present at the moment (According to the Code Inspection that I ran).
-When you first open the app it will bring you to a log-in screen and once you get pass that
-you should be able to see the first fragment which it the Bar Fragment. You can fill in the 
-information but it does nothing yet, the list view does not display anything yet either.  
+<p>The app Beer Buddy is not complete and still has a lot of work left to do on it. 38  Android Warnings
+are present at the moment (According to the Code Inspection that I ran).
+When you first open the app it will bring you to the Google Sign-in screen and once you get pass that
+you should be able to see the Bar fragment which will be holding data in the List View. In the top right 
+corner you can pull down the Navigational Drawer and it has four selections. Bar, Beer, and Sign-Out work but Happy
+hour does not it will crash. In both the Beer and Bar windows it will display only information and the 
+buttons on the bottom do not work yet. You can fill in the the Edit Text information but it does nothing yet. Sign-out will
+work and take you back to the beginning of when you first launched the app.</p>
  
 * Hit List to work on:
     1. Get rid of the Errors and as much warnings as possible.
-    2. Incorporate the API (Untappd) that I have to fill my database.
+    2. In Happy Hour get the whole fragment to work, from adding and displaying information.
     3. Get buttons to work properly in all the Fragments(updating, clearing, add buttons)
     4. Bugs/errors that pop up are the following in this [list](List-of-Errors.md).
     
@@ -51,7 +54,7 @@ information but it does nothing yet, the list view does not display anything yet
 - UnTappd Drink Socially
 
 ## Aesthetic and Cosmetic
-Beer Buddy is not functioning at the moment like its suppose to. 
+Beer Buddy is not functioning 100% like I would like it too. However you can still navigate around from window to window.  
 Here is the list of things I would like to accomplish for it to work properly:
 1. Get the API connection to import the database.
 2. Get buttons to work so you can filter by inputted information.
@@ -60,6 +63,7 @@ Here is the list of things I would like to accomplish for it to work properly:
 1. Add in Google Maps and place makers at all the Bars.
 2. Add in self-made icons and spruce it up to make it more presentable.
 3. Add in a personal logo.
+4. Find a better API to work with that has more information I can display.
 
 ## Up to date Wireframes and User Stories
 Up to date [Wireframe-3](WireFrame-3.png)

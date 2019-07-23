@@ -14,7 +14,6 @@ import java.util.List;
 
 /**
  * Returns the Happy Hour specified by bar from the database.
-
  */
 
 @Dao
