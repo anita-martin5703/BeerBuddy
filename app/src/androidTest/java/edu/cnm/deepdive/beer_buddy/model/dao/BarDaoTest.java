@@ -42,7 +42,7 @@ public class BarDaoTest {
 
     @Test
     public void insert() {
-        Bar bar = new Bar("", "", "", "");
+        Bar bar = new Bar();
         bar.setLocation("Albuquerque");
         bar.setName("Marble");
         bar.setType("Brewery");
@@ -54,7 +54,7 @@ public class BarDaoTest {
     @Test(expected = SQLiteConstraintException.class)
     // This should pass because we EXPECTED it to fail (Test passed means fail)
     public void insertNullBar() {
-        Bar bar = new Bar("", "", "", "");
+        Bar bar = new Bar();
         long id = dao.insert(bar);
         fail("This shouldn't get here!");
     }
