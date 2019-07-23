@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `Beer`
 (
     `id`            INTEGER PRIMARY KEY AUTOINCREMENT,
     `beer_id`       INTEGER,
-     `name`         TEXT,
+    `name`         TEXT,
     `brewery_house` TEXT,
     `beer_Abv`      INTEGER NOT NULL,
     `description`   TEXT,
