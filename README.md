@@ -1,6 +1,6 @@
 # Beer Buddy!
 
-#Milestone #1
+# Milestone #1
 
 ### Brief Overview
 
@@ -13,8 +13,6 @@ purchase the specific beer. This can be at a local store, a brewery, or a bar. A
 you will have access to the newest spots that are opening up. Lastly you will also see the Top 
 Breweries that are in the area. Persist data I would like to keep the user’s favorite beer places and 
 previous drink searches.
-
-* [License](docs/License.md)
 
 * [User stories](docs/user-stories.md)
 
