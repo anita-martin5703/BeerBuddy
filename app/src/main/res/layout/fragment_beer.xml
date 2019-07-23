@@ -30,10 +30,10 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:hint="@string/select_beer"
-            app:layout_constraintTop_toBottomOf="@+id/list_of_beers"
-            app:layout_constraintStart_toStartOf="parent"
+             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/select_brewery"
+            android:visibility="visible"
             android:gravity="center_horizontal"
             android:inputType="text">
     </EditText>
@@ -49,9 +49,9 @@
             android:hint="@string/select_brewery"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_beer_name"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_abv"
             android:gravity="center_horizontal"
+            android:visibility="visible"
             android:inputType="text">
     </EditText>
 
@@ -66,8 +66,8 @@
             android:hint="@string/select_beer_abv"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_brewery"
             app:layout_constraintBottom_toTopOf="@+id/select_beer_style"
+            android:visibility="visible"
             android:gravity="center_horizontal"
             android:inputType="number">
     </EditText>
@@ -83,8 +83,8 @@
             android:hint="@string/select_beer_style"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_beer_abv"
             app:layout_constraintBottom_toTopOf="@+id/search_beer_button"
+            android:visibility="visible"
             android:gravity="center_horizontal"
             android:inputType="text">
     </EditText>
@@ -97,7 +97,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/clear_beer_button"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_beer_style"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
@@ -111,7 +110,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/search_beer_button"
-            app:layout_constraintTop_toBottomOf="@+id/select_beer_style"
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
