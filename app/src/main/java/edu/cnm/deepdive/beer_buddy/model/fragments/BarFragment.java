@@ -58,7 +58,9 @@ public class BarFragment extends Fragment {
         setupBarSearch(barInfoView);
         return barInfoView;
     }
-
+    /**
+     * Sets up the search results according to the user input in a List View.
+     */
     private void setupBarSearch(View view) {
         barName = view.findViewById(R.id.select_bar_name);
         barType = view.findViewById(R.id.select_type_of_bar);
@@ -86,12 +88,16 @@ public class BarFragment extends Fragment {
         });
     }
 
+    /**
+     * Sets up the View Model output into a generic layout.
+     */
     private void setupBarViewModel() {
         barViewModel = ViewModelProviders.of(this).get(BarViewModel.class);
         getLifecycle().addObserver(barViewModel);
         barViewModel.getAllBars("").observe(this, (bars) -> {
             ArrayAdapter<Bar> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, bars);
 //            ArrayAdapter<Bar> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, bars);
+            // TODO build a custom Array Adapter to match the layout
             searchResultsBar.setAdapter(adapter);
         });
     }

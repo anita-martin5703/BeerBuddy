@@ -20,7 +20,7 @@ import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 /**
  * Class BarDatabase sets up the mapping for Room to build the database.
  */
-@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1, exportSchema = false)
+@Database(entities = {Bar.class, Beer.class, BarBeerJoin.class}, version = 1)
 public abstract class BarDatabase extends RoomDatabase {
 
     private static BarDatabase INSTANCE;

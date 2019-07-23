@@ -18,9 +18,13 @@ import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
 import edu.cnm.deepdive.beer_buddy.model.viewModel.BeerViewModel;
-
+/**
+ * Beer Fragment Class encapsulates the information to set up views to send to the viewModel.
+ */
 public class BeerFragment extends Fragment {
-
+    /**
+     * Fields to be used in the this Beer Fragment
+     */
     private BeerViewModel beerViewModel;
     private EditText selectBeer;
     private EditText selectBrewery;
@@ -30,8 +34,10 @@ public class BeerFragment extends Fragment {
     private ImageButton clearButton;
     private ListView searchResultsBeer;
 
+    /**
+     * Required empty constructor
+     */
     public BeerFragment() {
-        //Required empty constructor
     }
 
     @Override
@@ -44,12 +50,16 @@ public class BeerFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        /**
+         * Inflates the layout for this fragment
+         */
         View beerInfoView = inflater.inflate(R.layout.fragment_beer, container, false);
         setupBeerSearch(beerInfoView);
         return beerInfoView;
     }
-
+    /**
+     * Sets up the search results according to the user input in a List View.
+     */
     private void setupBeerSearch(View view) {
         selectBeer= view.findViewById(R.id.select_beer_name);
         selectBrewery = view.findViewById(R.id.select_brewery);
@@ -76,12 +86,16 @@ public class BeerFragment extends Fragment {
             };
         });
     }
-
+    /**
+     * Sets up the View Model output into a generic layout.
+     */
     private void setupBeerViewModel() {
         beerViewModel = ViewModelProviders.of(this).get(BeerViewModel.class);
         getLifecycle().addObserver(beerViewModel);
         beerViewModel.getAllBeers("").observe(this, (beers) -> {
-            ArrayAdapter<Beer> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, beers);
+            ArrayAdapter<Beer> adapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, beers);
+//            ArrayAdapter<Beer> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, beers);
+            // TODO build a custom Array Adapter to match the layout
             searchResultsBeer.setAdapter(adapter);
         });
     }

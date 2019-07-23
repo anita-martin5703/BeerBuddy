@@ -20,7 +20,7 @@ android {
         buildConfigField "String", "CLIENT_ID", getServicesProperty("client_id")
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+                arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
             }
         }
     }

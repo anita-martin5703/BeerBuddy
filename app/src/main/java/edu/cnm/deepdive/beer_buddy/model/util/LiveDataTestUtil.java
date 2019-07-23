@@ -8,9 +8,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * Live Data Test Class that tests the output of our data.
+ */
 public class LiveDataTestUtil {
-
+    /**
+     * Method that test
+     */
     public static <T> T getValue(LiveData<T> liveData) throws InterruptedException {
         final Object[] data = new Object[1];
         CountDownLatch latch = new CountDownLatch(1);
