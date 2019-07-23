@@ -12,6 +12,7 @@ public class BarApplication extends Application {
   @Override
   public void onCreate(){
     super.onCreate();
+    Stetho.initializeWithDefaults(this);
     GoogleSignInService.setContext(this);
   }
 

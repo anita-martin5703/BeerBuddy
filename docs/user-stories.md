@@ -11,4 +11,4 @@
   stay on the latest trend. However how does one actually start this process? Becoming a 
   beer enthusiast you have to start tasting beer so that you can tell the difference. Well
   where they heck can I go? That is where the app BeerBuddy can help. Find locations of 
-  the most popular beer and also the ability to search for certain beers as well.
+  the most popular beer and also the ability to search for certain brewery as well.

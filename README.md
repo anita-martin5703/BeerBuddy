@@ -6,7 +6,7 @@
 
 This app will be appealing to anyone who loves beer! (of course 21+) It will help you locate
 breweries around your area, by mapping it out right on your mobile device. (using Google Maps) 
-When you click on the different breweries you will be able display top beers they carry, 
+When you click on the different breweries you will be able display top brewery they carry, 
 the hours they are open, any specials/event that are happening that day and of course a link to their
 homepage. The app will be capable of a search-by-beer options as well, to narrow down where you can
 purchase the specific beer. This can be at a local store, a brewery, or a bar. Another option is 

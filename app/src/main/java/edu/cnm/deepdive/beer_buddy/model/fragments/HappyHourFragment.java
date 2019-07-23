@@ -16,7 +16,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import edu.cnm.deepdive.beer_buddy.R;
 import edu.cnm.deepdive.beer_buddy.model.entity.HappyHour;
-import edu.cnm.deepdive.beer_buddy.model.viewModel.HappyHourViewModel;
 
 public class HappyHourFragment extends Fragment {
 

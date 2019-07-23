@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
+import com.google.gson.annotations.SerializedName;
 
 /**
  * Bar Class holds setters and getters for fetching the columns and rows of the Bar Database.
@@ -18,17 +19,16 @@ public class Bar {
      */
     @PrimaryKey(autoGenerate = true)
     private long id;
+    @SerializedName("brewery_id")
     @ColumnInfo(name = "bar_id", index = true)
     private long barId;
     @NonNull
+    @SerializedName("brewery_name")
     private String name;
     private String type;
-    private String location;
+    transient private String location; // FIXME Temporarily ignored for deserialization.
     @ColumnInfo(name = "projected_date", index = true)
     private String projectedDate;
-
-    public Bar(String name, String type, String location, String projectedDate) {
-    }
 
     /**
      * Returns the Id of this instance.

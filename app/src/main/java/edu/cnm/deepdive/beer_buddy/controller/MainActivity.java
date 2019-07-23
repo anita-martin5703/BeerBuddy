@@ -32,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Loads different fragments (Bars, Beers, Happy Hour).
+     * Loads different fragments (Bars, Brewery, Happy Hour).
      */
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
-            getSupportFragmentManager()
-                    .beginTransaction()
+            getSupportFragmentManager().beginTransaction()
                     .replace(R.id.nav_host_fragment, fragment)
                     .commit();
             return true;

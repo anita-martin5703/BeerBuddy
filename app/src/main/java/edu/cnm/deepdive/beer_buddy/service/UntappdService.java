@@ -4,8 +4,12 @@
 package edu.cnm.deepdive.beer_buddy.service;
 
 import edu.cnm.deepdive.beer_buddy.BuildConfig;
+import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
 import edu.cnm.deepdive.beer_buddy.model.entity.Beer;
+import edu.cnm.deepdive.beer_buddy.model.pojo.BarSearchResponse;
+import edu.cnm.deepdive.beer_buddy.model.pojo.BeerSearchResponse;
 import io.reactivex.Observable;
+import io.reactivex.Single;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -16,20 +20,25 @@ import retrofit2.http.Query;
 
 import java.util.List;
 
-public interface BeerService {
+public interface UntappdService {
 
-    @GET("beer/search")
-    Observable<List<Beer>> getBeer(@Query("client_id") String clientId,
-                                   @Query("client_secret") String clientSecret,
-                                   @Query("q") String fragment);
+    @GET("search/brewery")
+    Single<BarSearchResponse> getBars(@Query("client_id") String clientId,
+                                      @Query("client_secret") String clientSecret,
+                                      @Query("q") String fragment);
 
-    static BeerService getInstance() {
-        return InstanceHolder.INSTANCE;
+    @GET("search/beer")
+    Single<BeerSearchResponse> getBeer(@Query("client_id") String clientId,
+                                       @Query("client_secret") String clientSecret,
+                                       @Query("q") String fragment);
+
+    static UntappdService getInstance() {
+        return UntappdService.InstanceHolder.INSTANCE;
     }
 
     class InstanceHolder {
 
-        private static final BeerService INSTANCE;
+        private static final UntappdService INSTANCE;
 
         static {
             // Following five lines should be removed/commented out for production release.
@@ -44,7 +53,7 @@ public interface BeerService {
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl(BuildConfig.BASE_URL)
                     .build();
-            INSTANCE = retrofit.create(BeerService.class);
+            INSTANCE = retrofit.create(UntappdService.class);
 
         }
     }

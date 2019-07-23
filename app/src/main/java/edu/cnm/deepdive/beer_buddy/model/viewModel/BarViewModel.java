@@ -8,7 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.*;
 import edu.cnm.deepdive.beer_buddy.BuildConfig;
 import edu.cnm.deepdive.beer_buddy.model.entity.Bar;
-import edu.cnm.deepdive.beer_buddy.service.BarService;
+import edu.cnm.deepdive.beer_buddy.model.pojo.BarSearchResponse;
+import edu.cnm.deepdive.beer_buddy.service.UntappdService;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -16,7 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 import java.util.LinkedList;
 import java.util.List;
 
-public class BarViewModel extends AndroidViewModel {
+public class BarViewModel extends AndroidViewModel implements LifecycleObserver {
 
     private MutableLiveData<List<Bar>> mAllBars;
     private CompositeDisposable pending = new CompositeDisposable();
@@ -30,12 +31,21 @@ public class BarViewModel extends AndroidViewModel {
             mAllBars = new MutableLiveData<>();
         }
         if (term != null) {
+            if (term.trim().isEmpty()) {
+                term = "new mexico";
+            }
             pending.add(
-                    BarService.getInstance().getBars(BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET, term)
+                    UntappdService.getInstance().getBars(BuildConfig.CLIENT_ID, BuildConfig.CLIENT_SECRET, term)
                             .subscribeOn(Schedulers.io())
                             .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe((bars -> mAllBars.setValue(bars))
-                            ));
+                            .subscribe((searchResponse) -> {
+                                List<BarSearchResponse.Item> items = searchResponse.getResponse().getBrewery().getItems();
+                                List<Bar> bars = new LinkedList<>();
+                                for (BarSearchResponse.Item item : items) {
+                                    bars.add(item.getBrewery());
+                                }
+                                mAllBars.setValue(bars);
+                            }));
         } else {
             mAllBars.setValue(new LinkedList<>());
         }

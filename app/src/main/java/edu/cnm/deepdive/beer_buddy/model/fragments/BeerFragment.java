@@ -37,7 +37,6 @@ public class BeerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setupBeerSearch();
         setupBeerViewModel();
     }
 
@@ -47,17 +46,18 @@ public class BeerFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View beerInfoView = inflater.inflate(R.layout.fragment_beer, container, false);
+        setupBeerSearch(beerInfoView);
         return beerInfoView;
     }
 
-    private void setupBeerSearch() {
-        selectBeer= selectBeer.findViewById(R.id.select_beer_name);
-        selectBrewery = selectBrewery.findViewById(R.id.select_brewery);
-        selectBeerAbv = selectBeerAbv.findViewById(R.id.select_beer_abv);
-        selectBeerStyle = selectBeerStyle.findViewById(R.id.select_beer_style);
-        searchButton = searchButton.findViewById(R.id.search_beer_button);
-        clearButton = clearButton.findViewById(R.id.clear_beer_button);
-        searchResultsBeer = searchResultsBeer.findViewById(R.id.list_of_beers);
+    private void setupBeerSearch(View view) {
+        selectBeer= view.findViewById(R.id.select_beer_name);
+        selectBrewery = view.findViewById(R.id.select_brewery);
+        selectBeerAbv = view.findViewById(R.id.select_beer_abv);
+        selectBeerStyle = view.findViewById(R.id.select_beer_style);
+        searchButton = view.findViewById(R.id.search_beer_button);
+        clearButton = view.findViewById(R.id.clear_beer_button);
+        searchResultsBeer = view.findViewById(R.id.list_of_beers);
         searchButton.setOnClickListener((v -> beerViewModel.getAllBeers(selectBeer.getText().toString().trim())));
         clearButton.setOnClickListener((v -> {
             selectBeer.getText().clear();
@@ -79,7 +79,7 @@ public class BeerFragment extends Fragment {
 
     private void setupBeerViewModel() {
         beerViewModel = ViewModelProviders.of(this).get(BeerViewModel.class);
-        getLifecycle().addObserver((LifecycleObserver) beerViewModel);
+        getLifecycle().addObserver(beerViewModel);
         beerViewModel.getAllBeers("").observe(this, (beers) -> {
             ArrayAdapter<Beer> adapter = new ArrayAdapter<>(getContext(), R.layout.fragment_bar, beers);
             searchResultsBeer.setAdapter(adapter);

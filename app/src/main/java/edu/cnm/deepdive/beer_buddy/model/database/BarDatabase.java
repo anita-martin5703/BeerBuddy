@@ -74,12 +74,12 @@ public abstract class BarDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            Bar marble = new Bar("", "", "", "");
-            marble.setName("Marble");
-            marble.setType("Brewery");
-            marble.setLocation("ABQ");
-            marble.setProjectedDate("N/A");
-            db.getBarListingDao().insert(marble);
+//            Bar marble = new Bar();
+//            marble.setName("Marble");
+//            marble.setType("Brewery");
+//            marble.setLocation("ABQ");
+//            marble.setProjectedDate("N/A");
+//            db.getBarListingDao().insert(marble);
             return null;
         }
 
